@@ -1,0 +1,445 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>PiPalace</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="icon" href="images/palace-png.png">
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+				<!-- Note: The "styleN" class below should match that of the banner element. -->
+					<header id="header" class="alt style2">
+						<a href="index.html" class="logo"><span><i class="material-icons" style="font-size:30px; padding-top:15px;">home</i></span></a>
+						<nav>
+							<a href="#"><i class="material-icons" style="font-size:30px; padding-top:15px;">arrow_upward</i></a>
+							<a href="#menu"><i class="material-icons" style="font-size:30px; padding-top:15px;">menu</i></a>
+						</nav>
+					</header>
+				
+					<nav id="menu">
+						<ul class="links">
+							<li><a href="#intro" class="scrolly">Introduction</a></li>
+							<li><a href="#enclosure" class="scrolly">Enclosure</a></li>
+							<li><a href="#sd_card" class="scrolly">SD Card</a></li>
+							<li><a href="#retropie" class="scrolly">RetroPie</a></li>
+							<li><a href="#touch" class="scrolly">Touchscreen</a></li>
+							<li><a href="#result" class="scrolly">The result</a></li>
+						</ul>
+						<ul class="actions vertical">
+							<li><a href="index.html" class="button special fit">Home</a></li>
+							<!-- <li><a href="#" class="button fit">Log In</a></li> -->
+						</ul>
+					</nav>
+					
+				<!-- Banner -->
+				<!-- Note: The "styleN" class below should match that of the header element. -->
+					<section id="banner" class="style4">
+						<div class="inner">
+							<span class="image">
+								<img src="images/retrotv-panorama1.jpg" alt="" />
+							</span>
+							<header class="major">
+								<h1>The Pocket Sized Retro TV</h1>
+							</header>
+							<div class="content">
+								<p>Bring back the good old days</p>
+							</div>
+						</div>
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Introduction -->
+							<section id="one">
+								<div class="inner" id="intro">
+									<header class="major">
+										<h2>Introduction</h2>
+									</header>
+									<p>This guide shows you how to make and setup a retro-looking TV, with a Raspberry Pi, a Touchscreen and some 3D printed parts.</p>
+								</div>
+							</section>
+							<section id="two" class="spotlights">
+								<section>
+									<a href="generic.html" class="image">
+										<img src="images/retrotv-materials.jpg" alt="" data-position="center center" />
+									</a>
+									<div class="content">
+										<div class="inner">
+											<header class="major">
+												<h3>You will need:</h3>
+											</header>
+												<p> - A <a class="else" href="https://www.adafruit.com/product/3055" target="_blank" style="color:#ed4933; border-bottom:transparent;">Raspberry Pi 3</a> <i>(or Pi 2, B+ and A+ with WiFi dongle or ethernet cable plucked in)</i></p>
+												<p> - A <a class="else" href="https://www.adafruit.com/product/2441" target="_blank" style="color:#ed4933; border-bottom:transparent;">Adafruit PiTFT 3.5" Touchscreen for Raspberry Pi</a></p>
+												<p> - A <a class="else" href="https://www.adafruit.com/product/1995" target="_blank" style="color:#ed4933; border-bottom:transparent;">5V 2.4A Power Supply</a> for Raspberry Pi</p>
+												<p> - A 4GB or higher Micro SD Card</p>
+												<p> - An Emty USB Stick</p>
+												<p> - A Keyboard and a mouse</p>
+												<p> - A connection to a monitor or TV</p>
+												<p> - A 3D printer and a spool of any color PLA <i>(or you could use a 3D service like <a class="else" href="https://www.3dhubs.com/" target="_blank" style="color:#ed4933; border-bottom:transparent;">3D Hubs</a> to print it for you)</i></p>
+												<p> - A Grey spray paint <i>(optional: you could just stick with the color of the filament)</i></p>
+												<p> - A glue of some sort <i>(I used wood glue)</i></p>
+												<p> - A spool of wood filament <i>(optional)</i></p>
+										</div>
+									</div>
+								</section>
+							</section>
+
+							<!-- Enclosure -->
+
+							<section id="one">
+									<div class="inner" id="enclosure">
+										<header class="major">
+											<h2>Enclosure</h2>
+										</header>
+										<p>I made a 3D printed enclosure, to house all the electronics. But you could also make it out of cardboard, wood, etc.</p>
+									</div>
+							</section>
+							<section id="two" class="spotlights">
+								<section>
+										<a class="image">
+											<img src="images/retrotv-animation.gif" alt="" data-position="25% 25%" />
+										</a>
+										<div class="content">
+											<div class="inner">
+												<header class="major">
+													<h3>3D printing</h3>
+												</header>
+												<p style="padding-bottom: 10px;"><i>The base of the 3D printed enclosure, 
+				were design by the <a class="else" href="https://www.thingiverse.com/thing:1601055" target="_blank" style="color:#ed4933; border-bottom:transparent;">Ruiz Brothers on Adafruit</a>, but I designed the bezel and the legs, to give it a retro-looking theme.</i></p>
+												<p>1. Start by downloading the files from the link below, or directly from my <a class="else" href="https://www.thingiverse.com/thing:2513241" target="_blank" style="color:#ed4933; border-bottom:transparent;">Thingiverse</a> page, and print them out. 
+I printed the front and back panel in some ordinary PLA, and the bezel and the legs in a wood-like PLA. But you can use whatever you like, or have on hand.</p>
+												<p></p>
+												<ul class="actions" style="padding-top: 20px;">
+													<li><a href="downloads/RetroPie_TV.zip" class="button special">Download .zip <!-- <i class="material-icons">file_download</i> --> </a></li>
+												</ul>
+											</div>
+										</div>
+									</section>
+								<section>
+									<a href="generic.html" class="image">
+										<img src="images/retrotv-glue.gif" alt="" data-position="center center" />
+									</a>
+									<div class="content">
+										<div class="inner">
+											<p>2. The back of the base has a hinge, that you need to cut free, so it can swing in and out.</p>
+											<p>3. Spray the outside of the base with some ordinary grey spray paint. I recommend giving it multiple coats.</p>
+											<p class="notice"><i class="fa fa-exclamation-circle" style="padding-right:15px;"></i> Remember to paint outside, or in a well ventilated room.</p>
+											<p>4. Then glue the bezel to the front of the base. I ended up using wood glue for this, because my other glues didn't work. But you can use whatever works for you.</p>
+											<p>Remember to lay something heavy on top, so the glue can settle.</p>
+										</div>
+									</div>
+								</section>
+								<section>
+										<a href="generic.html" class="image">
+											<img src="images/retrotv-legs.jpg" alt="" data-position="center center" />
+										</a>
+										<div class="content">
+											<div class="inner">
+												<p>5. At last glue the 4 legs to the bottom.</p>
+												<p class="notice"><i class="fa fa-exclamation-circle" style="padding-right:15px;"></i> Notice the orientation and keep pressure on it, while the glue is settling.</p>
+											</div>
+										</div>
+									</section>
+								<section>
+									<a href="generic.html" class="image">
+										<img src="images/retrotv-assembly.gif" alt="" data-position="center center" />
+									</a>
+									<div class="content">
+										<div class="inner">
+											<p>6. Put it all together!</p>
+											<p>- Start by setting the Touchscreen on top of the Raspberry Pi's GPIO header.</p>
+											<p>- Then set the Raspberry Pi with the Touchscreen face down, into the front panel, so the screen and USB-ports line up with the 3D printed case.</p>
+											<p>- At last line up the Raspberry Pi's ports on the side, with the back panel, and snap the two halves together. Dont be afraid of it cracking, just work your way from corner to corner.</p>
+										</div>
+									</div>
+								</section>
+							</section>
+
+							<!-- Setting up the Micro SD Card -->
+							<section id="one">
+									<div class="inner" id="sd_card">
+										<header class="major">
+											<h2>SD Card</h2>
+										</header>
+										<p>It is completely up to you to decide what operating system you will use. You could fx. instead of <a class="else" href="https://retropie.org.uk/" target="_blank" style="color:#ed4933; border-bottom:transparent;">RetroPie</a> 
+use <a class="else" href="https://www.raspberrypi.org/downloads/raspbian/" target="_blank" style="color:#ed4933; border-bottom:transparent;">Raspian</a>, <a class="else" href="https://kodi.tv/" target="_blank" style="color:#ed4933; border-bottom:transparent;">Kodi</a>, etc. But you still have to configure the touch screen, as i will show.</p>
+									</div>
+								</section>
+							<section id="two" class="spotlights">
+								<section>
+									<a class="image">
+										<img src="images/sdcard-formatter.jpg" alt="" data-position="top center" />
+									</a>
+									<div class="content">
+										<div class="inner">
+											<header class="major">
+												<h3 style="padding-bottom:0px;">Burning the operating system to the Micro SD Card</h3>
+											</header>
+											<p class="notice"><i class="fa fa-exclamation-circle" style="padding-right:15px;"></i>This is only for mac-users! But if you have PC you can easily find a tutorial online, and return to <a class="scrolly else" href="#retropie" style="color:black; border-bottom:transparent;">RetroPie</a></p>
+											<p>1. Start by downloading your desired operating system from the internet, in my case from <a class="else" href="https://retropie.org.uk/download/" target="_blank" style="color:#ed4933; border-bottom:transparent;">https://retropie.org.uk/download/</a>. Be sure to download the latest for Raspberry Pi 2 and 3. Now unzip it.</p>
+										</div>
+									</div>
+								</section>
+								<section>
+									<a class="image">
+										<img src="images/applepi-baker.jpg" alt="" data-position="25% 25%" />
+									</a>
+									<div class="content">
+										<div class="inner">
+												<p>2. Then use <a class="else" href="https://sd-formatter.en.uptodown.com/mac" target="_blank" style="color:#ed4933; border-bottom:transparent;">SDFormatter</a> to clean the SD Card, and delete everything on it. 
+													Do this by selcting your SD Card and setting it to <b>Quick Format</b>, and then clicking <b>Format</b>.</p>
+											<p>3. Now burn the operating system to the SD Card, with <a class="else" href="https://www.tweaking4all.com/software/macosx-software/macosx-apple-pi-baker/" target="_blank" style="color:#ed4933; border-bottom:transparent;">ApplePi-Baker</a>. 
+Again select your SD Card, then select the unzipped operating system, and at last press <b>Restore Backup</b>. This can take som time...</p>
+											<p>4. Once it's done, you can put the SD Card into the Pi.</p>
+										</div>
+									</div>
+								</section>
+							</section>
+
+						<!-- Setting up RetroPie -->
+							<section id="one">
+									<div class="inner" id="retropie">
+										<header class="major">
+											<h2>RetroPie</h2>
+										</header>
+										<p>We will now configure the keyboard and install our ROMs.</p>
+									</div>
+								</section>
+						<section id="two" class="spotlights">
+							<section>
+								<a class="image">
+									<img src="images/retropie-input-config.jpg" alt="" data-position="top center" />
+								</a>
+								<div class="content">
+									<div class="inner">
+										<p>1. If you haven't already plugged in all the cables, go ahead and do that now.</p>
+										<p class="notice"><i class="fa fa-exclamation-circle" style="padding-right:15px;"></i>Remember to connect power at last!</b></p>
+										<p>2. When it have booted up you can configure your keyboard. Start by holding down a key, and then you have to configure the following: 
+<b>"D-PAD UP"</b>, <b>"D-PAD DOWN"</b>, <b>"D-PAD LEFT"</b>, <b>"D-PAD RIGHT"</b>, <b>"START"</b>, <b>"SELECT"</b>, <b>"A"</b> and <b>"B"</b>, the rest you can skip by holding down a random key.</p>
+									</div>
+								</div>
+							</section>
+							<section>
+									<a class="image">
+										<img src="images/retropie-usb.jpg" alt="" data-position="top center" />
+									</a>
+									<div class="content">
+										<div class="inner">
+											<header class="major">
+												<h3>Transferring ROMs to the Pi</h3>
+											</header>
+											<p><i>You can watch <a class="else" href="https://www.youtube.com/watch?v=FujWwOmQBBU" target="_blank" style="color:#ed4933; border-bottom:transparent;">this</a> video as a reference, so check it out if you don't understand it.</i></p>
+											<p>1. Insert an empty USB-stick to your computer.</p> <!-- <i>If you have stuff on it, you could fx. use <a class="else" href="https://sd-formatter.en.uptodown.com/mac" target="_blank" style="color:#ed4933; border-bottom:transparent;">SDFormatter</a> to get rid of it, but it is not required.</i></p> -->
+											<p>2. On your USB-stick make a new folder called <b>retropie</b> and eject the USB-stick.</p>
+											<p>3. While the Pi is turned on, insert the USB-stick. Wait about 1 min. and take it out again.</p>
+											<p>4. Now put the SD-card back into your computer, and you should see that there is created some folders in the <b>retropie</b>-folder.</p>
+										</div>
+									</div>
+								</section>
+								<section>
+										<a class="image">
+											<img src="images/retropie-roms.jpg" alt="" data-position="top center" />
+										</a>
+										<div class="content">
+											<div class="inner">
+												<p>5. In the <b>roms</b>-folder you can insert your ROMs, in there associated emulator folder.</p>
+												<p style="padding-bottom:15px;">6. Plug it back into your Pi, and reboot the system. Do this by by navigating with <b>"A"</b>:</p>
+<blockquote>Start by Pressing <b style="color:#ed4933">"START"</b> <i class="material-icons">arrow_forward</i> Then going down to <b style="color:#ed4933">Quit</b> <i class="material-icons">arrow_forward</i> Then go down to <b style="color:#ed4933">Restart System</b> 
+<i class="material-icons">arrow_forward</i> And then <b style="color:#ed4933">Yes</b></blockquote>
+												<p>7. Once it's finish rebooting, your games should appear, and you can remove the USB-stick without losing the games.</p>
+											</div>
+										</div>
+									</section>
+								</section>
+							<!-- Setting up RetroPie -->
+							<section id="one">
+									<div class="inner" id="touch">
+										<header class="major">
+											<h2>Touchscreen</h2>
+										</header>
+										<p>By now it only gets displayed on the TV or monitor you have hooked it up to. So now you need to configure the Touchscreen.</p>
+										<p style="padding-top:15px;" class="notice"><i class="fa fa-exclamation-circle" style="padding-right:15px;"></i>This will not configure the touch, but you can find some premade image for the display on adafrut, were the touch is added.
+Fx. <a class="else" href="https://learn.adafruit.com/adafruit-pitft-3-dot-5-touch-screen-for-raspberry-pi/easy-install?view=all" target="_blank" style="color:black; border-bottom:transparent;">here</a>
+ you can find a Jessie-based PiTFT image for the 3.5" display, that you burn to your SD card, just like I showed. And it works right away.</p></p>
+									</div>
+								</section>
+							<section id="two" class="spotlights">
+							<section>	
+								<a class="image">
+									<img src="images/retropie-menu.jpg" alt="" data-position="25% 25%" />
+								</a>
+								<div class="content">
+									<div class="inner">
+										<p><i>I'm basically just following <a class="else" href="https://learn.adafruit.com/running-opengl-based-games-and-emulators-on-adafruit-pitft-displays/retropie-setup?view=all" target="_blank" style="color:#ed4933; border-bottom:transparent;">this</a> guide on Adafruit, but I have stripped it down, so check it out if you want more information about these steps.</i></p>
+										<p style="padding-top:20px;">1. Start by connecting to WIFI. 
+Do this by going to <b>RetroPie</b> <i class="material-icons">arrow_forward</i> <b>WIFI</b> and here you can login to your network. After that just <b>Exit</b>.</p>
+										<p>2. Now by navigating with <b>"A"</b>, go into <b>RetroPie</b> on the menu, go to <b>RASPI-CONFIG</b>.</p>
+									</div>
+								</div>
+							</section>
+							<section>	
+									<a class="image">
+										<img src="images/raspi-config.jpg" alt="" data-position="25% 25%" />
+									</a>
+									<div class="content">
+										<div class="inner">
+											<p>In here navigate with the <b>ARROW-keys</b> and <b>ENTER</b></p>
+											<p>3. In here go to <b>Advanced Options</b> and go over these steps:</p>
+											<p>- Overscan: disable.</p>
+											<p>- Device Tree: enable (not an option in newer releases; it’s always enabled).</p>
+											<p>- SPI: enable and load kernel module by default. (not an option in newer releases; it’s always enabled).</p>
+											<p>- Audio: force 3.5mm headphone jack (since HDMI will be disconnected later).</p>
+											<p style="padding-top:10px;">4. Now go <b>Back</b> <i class="material-icons">arrow_forward</i> And <b>Finish</b>, and reboot the system.</p>
+										</div>
+									</div>
+								</section>
+								<section>
+									<a class="image">
+										<img src="images/retropie-terminal.jpg" alt="" data-position="25% 25%" />
+									</a>
+									<div class="content">
+										<div class="inner">
+												<p>5. After reboot press <b>F4</b> on you keyboard, and you will be greeted with the Command Line.</p>
+												<p style="padding-bottom:20px;">6. Here type these commands:</p>
+												<pre><code>cd
+curl -O https://raw.githubusercontent.com/adafruit/Raspberry-Pi-Installer-Scripts/master/pitft-fbcp.sh</code></pre>
+										</div>
+									</div>
+								</section>
+								<section>
+									<a class="image">
+										<img src="images/screen-conf.jpg" alt="" data-position="25% 25%" />
+									</a>
+									<div class="content">
+										<div class="inner">
+											<p>Now type <code>sudo bash pitft-fbcp.sh</code> to configure.</p>
+											<p>It should now ask you some configuration questions.</p>
+											<p>1. Say <b>"y"</b> to <i>Continue</i>.</p>
+											<p>2. Select <i>Configure options manually</i>, with <b>"4"</b>.</p>
+											<p>3. Select <i>PiTFT Plus 3.5"</i>, with <b>"4"</b>.</p>
+											<p>4. Select <i>Normal (landscape)</i>, with<b>"1"</b>.</p>
+											<p>5. Select <i>270</i>, with <b>"4"</b>.</p>
+											<p>6. Again say <b>"y"</b> to <i>Continue</i>.</p>
+											<p>7. After that say <b>"y"</b> to <i>Reboot</i>.</p>
+										</div>
+									</div>
+								</section>
+							</section>
+						</section>
+								<section id="one"></section>
+									<div class="inner" id="result">
+										<header class="major">
+											<h2>The result</h2>
+										</header>
+										<p>Congratulations, you're done!!!</p>
+									</div>
+									<!-- Slideshow container -->
+									<div class="slideshow-container">
+									
+										<div class="mySlides fade">
+										  <div class="numbertext">1 / 3</div>
+										  <img src="images/retrotv-wide1.jpg" style="width:100%">
+										</div>
+										
+										<div class="mySlides fade">
+										  <div class="numbertext">2 / 3</div>
+										  <img src="images/retrotv-usb.jpg" style="width:100%">
+										</div>
+										
+										<div class="mySlides fade">
+										  <div class="numbertext">3 / 3</div>
+										  <img src="images/retrotv-back.jpg" style="width:100%">
+										</div>
+										
+										<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+										<a class="next" onclick="plusSlides(1)">&#10095;</a>
+											
+										</div>
+										<br>
+										
+										<div style="text-align:center">
+										  <span class="dot" onclick="currentSlide(1)"></span> 
+										  <span class="dot" onclick="currentSlide(2)"></span> 
+										  <span class="dot" onclick="currentSlide(3)"></span> 
+									</div>
+								</section>
+							</section>
+						</section>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<ul class="icons">
+								<li><a href="https://github.com/Anders644PI" target="_blank" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
+								<li><a href="https://www.thingiverse.com/Anders644PI/about" target="_blank" class="icon alt fa-share-alt"><span class="label">Thingiverse</span></a></li>
+								<li><a href="https://www.instructables.com/member/Anders644PI/" target="_blank" class="icon alt fa-group"><span class="label">GitHub</span></a></li>
+								<li><a href="https://www.instagram.com/anders644pi/" target="_blank" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="https://twitter.com/Anders644PI" target="_blank" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
+							</ul>
+							<ul class="copyright">
+								<li>PiPalace <i style="padding-left:5px;" class="fa fa-bank"></i></li>
+								<li>By: Anders Severinsen</li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+			<script>
+					var slideIndex = 1;
+					showSlides(slideIndex);
+					
+					function plusSlides(n) {
+					  showSlides(slideIndex += n);
+					}
+					
+					function currentSlide(n) {
+					  showSlides(slideIndex = n);
+					}
+					
+					function showSlides(n) {
+					  var i;
+					  var slides = document.getElementsByClassName("mySlides");
+					  var dots = document.getElementsByClassName("dot");
+					  if (n > slides.length) {slideIndex = 1}    
+					  if (n < 1) {slideIndex = slides.length}
+					  for (i = 0; i < slides.length; i++) {
+						  slides[i].style.display = "none";  
+					  }
+					  for (i = 0; i < dots.length; i++) {
+						  dots[i].className = dots[i].className.replace(" active", "");
+					  }
+					  slides[slideIndex-1].style.display = "block";  
+					  dots[slideIndex-1].className += " active";
+					}
+					</script>
+					
+	</body>
+</html>

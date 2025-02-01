@@ -1,0 +1,369 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>PiPalace</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="icon" href="images/palace-png.png">
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+				<!-- Note: The "styleN" class below should match that of the banner element. -->
+					<header id="header" class="alt style2">
+						<a href="index.html" class="logo"><span><i class="material-icons" style="font-size:30px; padding-top:15px;">home</i></span></a>
+						<nav>
+							<a href="#"><i class="material-icons" style="font-size:30px; padding-top:15px;">arrow_upward</i></a>
+							<a href="#menu"><i class="material-icons" style="font-size:30px; padding-top:15px;">menu</i></a>
+						</nav>
+					</header>
+				
+					<nav id="menu">
+						<ul class="links">
+							<li><a href="#intro" class="scrolly">Introduction</a></li>
+							<li><a href="#materials" class="scrolly">Materials</a></li>
+							<li><a href="#weather" class="scrolly">Weather data</a></li>
+							<li><a href="#set_up1" class="scrolly">Setting up the RPi with Oled</a></li>
+							<li><a href="#set_up2" class="scrolly">Setting up the Pi with LEDs</a></li>
+							<li><a href="#config" class="scrolly">Configuring the Weather API</a></li>
+							<li><a href="#pcb" class="scrolly">The PCB</a></li>
+							<li><a href="#enclosure" class="scrolly">The Laser Cut Enclosure</a></li>
+							<li><a href="#result" class="scrolly">The Result</a></li>
+						</ul>
+						<ul class="actions vertical">
+							<li><a href="index.html" class="button special fit">Home</a></li>
+							<!-- <li><a href="#" class="button fit">Log In</a></li> -->
+						</ul>
+					</nav>
+					
+				<!-- Banner -->
+				<!-- Note: The "styleN" class below should match that of the header element. -->
+					<section id="banner" class="style5">
+						<div class="inner">
+							<span class="image">
+								<img src="images/thermo_background2.jpeg" alt="" />
+							</span>
+							<header class="major">
+								<h1>Digital LED Thermometer</h1>
+							</header>
+							<div class="content">
+								<p>Check the outside temperature with a Raspberry Pi Zero W, LED strip and an Oled Display</p>
+							</div>
+						</div>
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Introduction -->
+							<section id="one">
+								<div class="inner" id="intro">
+									<header class="major">
+										<h2>Introduction</h2>
+									</header>
+									<p>Learn how i made this Digital LED Thermometer, with a Raspberry Pi Zero W, LED strip, an OLED Display, and more.</p>
+									<p>It automatically cycles thought a list of cities, and displays the temperature on the Oled display, and with the LED's. But you can also manually select a city to display, using the buttons on the side.</p>
+									<p>On top of that, it will shut off the LED's and the Oled, if it's been inactive for a few minutes, and will turn back on, if it detects a significant light change (Controlled by an LDR).</p>
+								</div>
+							</section>
+							<section id="two" class="spotlights">
+								<section>
+									<a class="image">
+										<img src="images/thermo_com2.jpeg" alt="" data-position="center center" />
+									</a>
+									<div class="content" id="materials">
+										<div class="inner">
+											<header class="major">
+												<h3>Components:</h3>
+											</header>
+												<p> - A <a class="else" href="https://www.adafruit.com/product/3708" target="_blank" style="color:#ed4933; border-bottom:transparent;">Raspberry Pi Zero W</a></p>
+												<p> - A <a class="else" href="https://www.amazon.de/gp/product/B079NNZ9V1/ref=ppx_yo_dt_b_asin_title_o02_s01?ie=UTF8&psc=1" target="_blank" style="color:#ed4933; border-bottom:transparent;">1.5 Inch OLED Module</a> by Waveshare</p>
+												<p> - A <a class="else" href="https://shop.pimoroni.com/products/raspberry-pi-universal-power-supply" target="_blank" style="color:#ed4933; border-bottom:transparent;">5V 2.4A Power Supply</a> for Raspberry Pi</p>
+												<p> - A <a class="else" href="https://www.amazon.de/gp/product/B01CDTECSG/ref=ppx_yo_dt_b_asin_title_o03_s00?ie=UTF8&psc=1" target="_blank" style="color:#ed4933; border-bottom:transparent;">5m WS2812B LED Strip, 30 LEDs/m</a></p>
+												<p> - Screws, washers, bolts and standoffs.</p>
+												<p> - A Custom PCB, with buttons, a switch, an ldr, pin-headers, and more</p>
+												<p> - Soldering iron and solder</p>
+												<p> - Hot glue</p>
+												<p> - Wood glue</p>
+												<p> - 4mm and 6mm plywood</p>
+												<p> - 3mm white acrylic</p>
+										</div>
+									</div>
+								</section>
+							<section>
+								<a class="image">
+									<img src="images/weather_api-key.jpg" alt="" data-position="25% 25%" />
+								</a>
+								<div class="content" id="weather">
+									<div class="inner">
+										<header class="major">
+											<h2>Weather data</h2>
+										</header>
+										<p style="padding-bottom: 15px;">Credit to <a class="else" href="https://www.youtube.com/watch?v=7SRB0O4m9TY" target="_blank" style="color:#ed4933; border-bottom:transparent;">StuffWithKirby</a> for his code on reading JSON weather data in python.</p>
+										<p><i>We get the weather data from <a class="else" href="https://openweathermap.org/" target="_blank" style="color:#ed4933; border-bottom:transparent;">OpenWeatherMap.org</a>.</i></p>
+										<p>1. Start by making a FREE account on OpenWeatherMap.org.</p>
+										<p>2. Then copy your api-key to use later.</p>
+										<p>3. Now download and open the <b>city.list.json</b> file, and search for the cities you want displayed, and copy the city-id's for later.</p>
+										<ul class="actions" style="padding-top: 20px;">
+											<li><a href="downloads/city.list.json.zip" class="button special">Download .zip <!-- <i class="material-icons">file_download</i> --> </a></li>
+										</ul>
+									</div>
+								</div>
+							</section>
+							<section>	
+								<a class="image">
+									<img src="images/thermo-code.jpg" alt="" data-position="25% 25%" />
+								</a>
+								<div class="content" id="set_up1">
+									<div class="inner">
+										<header class="major">
+											<h2>Setting up the RPi with Oled</h2>
+										</header>
+										<p class="notice"><i class="fa fa-exclamation-circle" style="padding-right:15px;"></i>Make sure the RPi is connected to the internet</p>
+										<!-- Sources: 
+											https://www.waveshare.com/w/upload/8/80/1.5inch_OLED_Module_User_Manual_EN.pdf
+											https://www.waveshare.com/wiki/Libraries_Installation_for_RPi -->
+										<p>1. Enable the I2C and SPI function in <code>raspi-config</code> under <i>Interfacing Options</i>. Exit and reboot.</p>
+										<p>2. Run this to update:</p>
+										<pre style="padding-top:10px;"><code>sudo apt-get update</code></pre>
+										<p>3. Run the following commands to install the necessary libraries:</p>
+										<pre style="padding-top:10px;"><code>sudo apt-get install python-dev
+#sudo python setup.py install
+sudo apt-get install python-smbus
+sudo apt-get install python-serial
+sudo apt-get install python-imaging</code></pre>
+										<p>4. Run the following command to open the configuration file:</p>
+										<pre style="padding-top:10px;"><code>sudo nano /etc/modules</code></pre>
+										<p>Make sure the following two lines, are in the configuration file, then exit and reboot:</p><pre style="padding-top:10px;"><code>i2c-bcm2708
+i2c-dev</code></pre>
+										<p>5. Now run this to clone my github repo:</p>
+										<pre style="padding-top:10px;"><code>git clone https://github.com/Anders644PI/1.5inch-OLED-with-RPi.git
+cd 1.5inch-OLED-with-RPi</code></pre>
+										<p>6. Unzip <i>wiringPi.zip</i>:</p><pre style="padding-top:10px;"><code>unzip wiringPi.zip
+cd wiringPi</code></pre>
+										<p>And run these commands:</p><pre style="padding-top:10px;"><code>chmod 777 build
+./build</code></pre>
+										<p>Check the installation with:</p><pre style="padding-top: 10px;"><code>gpio –v</code></pre>
+										<p>7. Go back to the main folder, by typing <code>cd /home/pi/1.5inch-OLED-with-RPi/</code>. Then unzip <i>bcm2835-1_45.zip</i></p><pre style="padding-top:10px;"><code>unzip bcm2835-1_45.zip
+cd bcm2835-1_45.zip</code></pre>
+										<p>8. Then run this, to install the library:</p><pre style="padding-top:10px;"><code>./configure
+make
+sudo make check
+sudo make install</code></pre>
+										<p>9. Again go back to <code>/home/pi/1.5inch-OLED-with-RPi/</code>, and run this, to test the oled: <pre style="padding-top: 10px;"><code>sudo python /Demo_Code/Python/main.py</code></pre></p>
+									</div>
+								</div>
+							</section>
+							<section>	
+								<a class="image">
+									<img src="images/thermo-code-mirrored.png" alt="" data-position="25% 25%" />
+								</a>
+								<div class="content" id="set_up2">
+									<div class="inner">
+										<header class="major">
+											<h2>Setting up the Pi with LEDs<h2 style="font-weight: 100; padding-left: 5px;">1</h2></h2>
+										</header>
+										<p><b>Source: https://tutorials-raspberrypi.com/connect-control-raspberry-pi-ws2812-rgb-led-strips/</b></p>
+										<p>1. We install the required packages (confirm with <i>y</i>):</p><pre style="padding-top:10px;"><code>sudo apt-get install gcc make build-essential python-dev git scons swig</code></pre>
+										<p>2. The audio output must be deactivated. For this we edit the file</p><pre style="padding-top:10px;"><code>sudo nano /etc/modprobe.d/snd-blacklist.conf</code></pre>
+										<p>Here we add the following line:</p><pre style="padding-top:10px;"><code>blacklist snd_bcm2835</code></pre>
+										<p>3. We also need to edit the configuration file:</p><pre style="padding-top:10px;"><code>sudo nano /boot/config.txt</code></pre>
+										<p>4. Now find this line:</p><pre style="padding-top:10px;"><code># Enable audio (loads snd_bcm2835)
+dtparam=audio=on</code></pre>
+										<p>And comment it out.</p><pre style="padding-top:10px;"><code># Enable audio (loads snd_bcm2835)
+#dtparam=audio=on</code></pre>
+										<p>5. Now reboot:</p><pre style="padding-top:10px;"><code>sudo reboot</code></pre>
+									</div>
+								</div>
+							</section>
+							<section>	
+								<a class="image">
+									<img src="images/thermo-code.jpg" alt="" data-position="25% 25%" />
+								</a>
+								<div class="content" id="set_up3">
+									<div class="inner">
+										<header class="major">
+											<h2>Setting up the Pi with LEDs<h2 style="font-weight: 100; padding-left: 5px;">2</h2></h2>
+										</header>
+										<!--<p><b>Source: https://tutorials-raspberrypi.com/connect-control-raspberry-pi-ws2812-rgb-led-strips/</b></p>-->
+										<p>1. Now we can download the library:</p><pre style="padding-top:10px;"><code>git clone https://github.com/jgarff/rpi_ws281x</code></pre>
+										<p>2. Run this:</p><pre style="padding-top:10px;"><code>cd rpi_ws281x/
+sudo scons</code></pre>
+										<p>3. And this:</p><pre style="padding-top:10px;"><code>cd python
+sudo python setup.py build
+sudo python setup.py install</code></pre>
+										<p>4. Reboot and run the script:</p><pre style="padding-top:10px;"><code>sudo python /pi/home/1.5inch-OLED-with-RPi/OLED_driver_and_code_python/Temp-display-cities-led-after-button-ldr-next-v3.py</code></pre>
+									</div>
+								</div>
+							</section>
+							<section>	
+								<a class="image">
+									<img src="images/thermo_code_api.png" alt="" data-position="25% 25%" />
+								</a>
+								<div class="content" id="config">
+									<div class="inner">
+										<header class="major">
+											<h2>Configuring the Weather API</h2>
+										</header>
+										<p>1. Cd into <i>LED_Thermometer_Code_and_OLED_driver</i>:</p>
+										<pre style="padding-top: 10px;"><code>cd LED_Thermometer_Code_and_OLED_driver</code></pre>
+										<p>2. Then open <i>Official_Digital_LED_Thermometer_v1-0.py</i>:</p>
+										<pre style="padding-top: 10px;"><code>nano Official_Digital_LED_Thermometer_v1-0.py</code></pre>
+										<p>And then scroll down and edit the api-key, to your api key, from openweathermap.org, as shown in the image on the right.</p>
+										<p>Also change the city-ids and city names, to your desired locations.</p>
+									</div>
+								</div>
+							</section>
+							<section>	
+								<a class="image">
+									<img src="images/thermo_pcb.JPEG" alt="" data-position="25% 25%" />
+								</a>
+								<div class="content" id="pcb">
+									<div class="inner">
+										<header class="major">
+											<h2>The Custom PCB</h2>
+										</header>
+										<p>I then made a custom PCB, to solder all of the electronics onto.</p>
+									</div>
+								</div>
+							</section>
+							<section>	
+								<a class="image">
+									<img src="images/thermo_laser_parts2.jpeg" alt="" data-position="25% 25%" />
+								</a>
+								<div class="content" id="enclosure">
+									<div class="inner">
+										<header class="major">
+											<h2>The Laser Cut Enclosure</h2>
+										</header>
+										<p>Then I modeled an enclosure, and laser cut it out of 4mm and 6mm plywood. I also modeled in LED diffusers, which i cut out in 3mm acrylic.</p>
+										<p>After that I attached the electronics and the LED-strip to the laser cut plywood. And I then assembled the enclosure, partly with glue and friction.</p>
+									</div>
+								</div>
+							</section>
+						</section>
+							<section id="one">
+								<div class="inner" id="result">
+									<header class="major">
+										<h2>The result</h2>
+									</header>
+									<p>So I hope you like my build.</p>
+									<p>If you are interested in buying the pcb with components, feel free to DM me, and we can arrange something. Note that i only have a limited supply.</p>
+								</div>
+									<!-- Slideshow container -->
+									<div class="slideshow-container">
+									
+										<div class="mySlides fade">
+										  <div class="numbertext">1 / 5</div>
+										  <img src="images/thermo_still.jpeg" style="width:100%">
+										</div>
+										
+										<div class="mySlides fade">
+										  <div class="numbertext">2 / 5</div>
+										  <img src="images/thermo_closeup.jpeg" style="width:100%">
+										</div>
+										
+										<div class="mySlides fade">
+										  <div class="numbertext">3 / 5</div>
+										  <img src="images/thermo_s.jpeg" style="width:100%">
+										</div>
+
+										<div class="mySlides fade">
+											<div class="numbertext">4 / 5</div>
+											<img src="images/thermo_se.jpeg" style="width:100%">
+										  </div>
+										  
+										  <div class="mySlides fade">
+											<div class="numbertext">5 / 5</div>
+											<img src="images/thermo_change.jpeg" style="width:100%">
+										  </div>
+										
+										<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+										<a class="next" onclick="plusSlides(1)">&#10095;</a>
+											
+										</div>
+										<br>
+										
+										<div style="text-align:center">
+										  <span class="dot" onclick="currentSlide(1)"></span> 
+										  <span class="dot" onclick="currentSlide(2)"></span> 
+										  <span class="dot" onclick="currentSlide(3)"></span> 
+									</div>
+								</section>
+							</section>
+						</section>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<ul class="icons">
+								<li><a href="https://github.com/Anders644PI" target="_blank" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
+								<li><a href="https://www.thingiverse.com/Anders644PI/about" target="_blank" class="icon alt fa-share-alt"><span class="label">Thingiverse</span></a></li>
+								<li><a href="https://www.instructables.com/member/Anders644PI/" target="_blank" class="icon alt fa-group"><span class="label">GitHub</span></a></li>
+								<li><a href="https://www.instagram.com/anders644pi/" target="_blank" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="https://twitter.com/Anders644PI" target="_blank" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
+							</ul>
+							<ul class="copyright">
+								<li>PiPalace <i style="padding-left:5px;" class="fa fa-bank"></i></li>
+								<li>By: Anders Severinsen</li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+			<script>
+					var slideIndex = 1;
+					showSlides(slideIndex);
+					
+					function plusSlides(n) {
+					  showSlides(slideIndex += n);
+					}
+					
+					function currentSlide(n) {
+					  showSlides(slideIndex = n);
+					}
+					
+					function showSlides(n) {
+					  var i;
+					  var slides = document.getElementsByClassName("mySlides");
+					  var dots = document.getElementsByClassName("dot");
+					  if (n > slides.length) {slideIndex = 1}    
+					  if (n < 1) {slideIndex = slides.length}
+					  for (i = 0; i < slides.length; i++) {
+						  slides[i].style.display = "none";  
+					  }
+					  for (i = 0; i < dots.length; i++) {
+						  dots[i].className = dots[i].className.replace(" active", "");
+					  }
+					  slides[slideIndex-1].style.display = "block";  
+					  dots[slideIndex-1].className += " active";
+					}
+					</script>
+					
+	</body>
+</html>

@@ -1,0 +1,436 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>PiPalace</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="icon" href="images/palace-png.png">
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+				<!-- Note: The "styleN" class below should match that of the banner element. -->
+					<header id="header" class="alt style2">
+						<a href="index.html" class="logo"><span><i class="material-icons" style="font-size:30px; padding-top:15px;">home</i></span></a>
+						<nav>
+							<a href="#"><i class="material-icons" style="font-size:30px; padding-top:15px;">arrow_upward</i></a>
+							<a href="#menu"><i class="material-icons" style="font-size:30px; padding-top:15px;">menu</i></a>
+						</nav>
+					</header>
+				
+					<nav id="menu">
+						<ul class="links">
+							<li><a href="#intro" class="scrolly">Introduction</a></li>
+							<li><a href="#3d_print" class="scrolly">3D Printing</a></li>
+							<li><a href="#assembly" class="scrolly">Assembly</a></li>
+							<li><a href="#setup" class="scrolly">Setting up the RPI</a></li>
+							<li><a href="#code" class="scrolly">Code</a></li>
+							<li><a href="#result" class="scrolly">Result and final notes</a></li>
+						</ul>
+						<ul class="actions vertical">
+							<li><a href="index.html" class="button special fit">Home</a></li>
+							<!-- <li><a href="#" class="button fit">Log In</a></li> -->
+						</ul>
+					</nav>
+
+				<!-- Banner -->
+				<!-- Note: The "styleN" class below should match that of the header element. -->
+					<section id="banner" class="style2">
+						<div class="inner">
+							<span class="image">
+								<img src="images/retroclock_5.jpeg" alt="" />
+							</span>
+							<header class="major">
+								<h1>Retro Digital Clock w/Raspberry Pi Zero</h1>
+							</header>
+							<div class="content">
+								<p>3D printed Raspberry Pi Zero retro digital clock</p>
+							</div>
+						</div>
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Introduction -->
+							<section id="one">
+								<div class="inner" id="intro">
+									<header class="major">
+										<h2>Introduction</h2>
+									</header>
+									<p>This project combines the amazing retro look, with the almost endless possibilities with Raspberry Pi and IoT.</p>
+									<p style="padding-top:15px;">In this guide I will show exactly how I designed and put together this 3D printed Raspberry Pi Zero retro digital clock.</p>
+									<p>By default it only displays the current time, but this can of course be customized to have much more functionality, just by adding more lines of code to the simple python program. If you want to, you can make it show the date, or the weather and temperature outside, by using a simple weather api, or maybe you want the display to show the news or current stock market prices.</p>
+									<p>Feel free to play around with the idea and the design, and customize it to fit your needs.</p>
+								</div>
+							</section>
+							<section id="two" class="spotlights">
+								<section>
+									<a class="image">
+										<img src="images/retroclock_components_rot.jpeg" alt="" data-position="center center" />
+									</a>
+									<div class="content">
+										<div class="inner">
+											<header class="major">
+												<h3>You will need:</h3>
+											</header>
+												<p> - A <a class="else" href="https://www.adafruit.com/product/3400" target="_blank" style="color:#ed4933; border-bottom:transparent;">Raspberry Pi Zero W</a></p>
+												<p> - A Micro SD Card (minimum 16GB)</p>
+												<p> - A Micro USB Charging cable</p>
+												<p> - A Red <a class="else" href="https://www.adafruit.com/product/878" target="_blank" style="color:#ed4933; border-bottom:transparent;">4-Digit Seven-Segment Display</a> or <a class="else" href="https://www.adafruit.com/product/1911" target="_blank" style="color:#ed4933; border-bottom:transparent;">Quad Alphanumeric Display</a> w/I2C Backpack</p>
+												<p> - Short length female to female jumper cables</p>
+												<p> - A 3D printer and a spool of any color PLA filament <i>(I used orange (Later primed, then painted silver, then weathered and painted red) and white filament)</i></p>
+												<p> - An assortment of small scrap screws (In my case from old scrap electronics)</p>
+												<p> - A small red LED (d=3mm) with a fitting resistor</p>
+												<p> - Two small tactile push buttons (6x6mm)</p>
+												<p> - Heat shrink tubing (Optional)</p>
+												<p style="padding-bottom:15px;"> - A spray primer and silver and red spray paint <i>(Optional: you could just stick to the color of the filament)</i></p>
+												<p><b><div class="a">Tools:</div></b></p>
+												<p style="padding-bottom:15px;">A soldering iron and solder, needle nose pliers, a hot glue gun and hot glue and a phillips head screwdriver.</p>
+										</div>
+									</div>
+								</section>
+							</section>
+
+				<!-- 3D Printing -->
+							<section id="one">
+								<div class="inner" id="3d_print">
+									<header class="major">
+										<h2>3D Printing</h2>
+									</header>
+									<p>I designed the enclosure myself, to exactly fit the Raspberry Pi and the display. I went for a retro look, and added an indicator LED in the front, for extra detail. On the back i also added space for two small tactile push buttons, which could be used to switch the display og Pi off, or scroll through different functions for the display.</p>
+									<p>Download the 3D-printable files below.</p>
+									<ul class="actions" style="padding-top: 20px;">
+										<li><a href="downloads/Retroclock_3dprints.zip" class="button special">Download .zip <!-- <i class="material-icons">file_download</i> --> </a></li>
+									</ul>
+								</div>
+							</section>
+					<section id="two" class="spotlights">
+						<section>
+							<a class="image">
+								<img src="images/retroclock_animation.gif" alt="" data-position="top center" />
+							</a>
+							<div class="content">
+								<div class="inner">
+									<p>The first step is to 3D-Print the three parts.</p>
+									<p>Parts to be printed: The <b>Base</b>, the <b>Front</b> and the <b>Back</b>.</p>
+									<p class="notice"><i class="fa fa-exclamation-circle" style="padding-right:15px;"></i>NOTICE: The <b>Base</b> will have to print with supports enabled.</p>
+								</div>
+							</div>
+						</section>
+						<section>
+							<a class="image">
+								<img src="images/retroclock_paint3.jpeg" alt="" data-position="top center" />
+							</a>
+							<div class="content">
+								<div class="inner">
+									<header class="major">
+										<h3>Painting <i>(Optional)</i>:</h3>
+									</header>
+									<p>Now this step is completely optional, but I choose to paint mine to make it look retro and worn out. But also to hide the fact that it is 3D-printed, which means priming and sanding the printed parts, to remove the layer lines.</p>
+								</div>
+							</div>
+						</section>
+						<section>
+							<a class="image">
+								<img src="images/retroclock_paint1.jpeg" alt="" data-position="top center" />
+							</a>
+							<div class="content">
+								<div class="inner">
+									<p><i>I choose only to paint and weather the main body, but not the front and back panels. But it is completely up to you.</i></p>
+									<p style="padding-top:10px;">Firstly I gave the part a good sanding, to remove some of the layer lines, and to give the paint something to stick to.</p>
+									<p style="padding-top:10px;">Then I gave it a good spray with a primer, followed up with another good sanding.</p>
+								</div>
+							</div>
+						</section>
+						<section>
+							<a class="image">
+								<img src="images/retroclock_paint_weathering2.jpeg" alt="" data-position="top center" />
+							</a>
+							<div class="content">
+								<div class="inner">
+									<p>Then to give it a weathered metallic look, I was inspired by Jonathan Odom, also known as <a class="else" href="https://www.instructables.com/member/JON-A-TRON/" target="_blank" style="color:#ed4933; border-bottom:transparent;">JON-A-TRON</a> on Instructables, and his weathering techniques for making 3D-printed parts look worn and rustic, which he showcased in <a class="else" href="https://www.instructables.com/3D-Printed-Animatronic-Puppet/" target="_blank" style="color:#ed4933; border-bottom:transparent;">this</a> Instructable of his.</p>
+									<p style="padding-top:20px;"><i>The following steps are from his guide on weathering:</i></p>
+									<p style="padding-top:10px;">1. Paint the parts to be weathered with a base coat. I went with metallic silver.</p>
+									<p>2. Once that coat dries, dab some water on the part then sprinkle salt onto the water. Push the salt into any desired shape.</p>
+								</div>
+							</div>
+						</section>
+						<section>
+							<a class="image">
+								<img src="images/retroclock_paint_trick.jpg" alt="" data-position="top center" />
+							</a>
+							<div class="content">
+								<div class="inner">
+									<p style="padding-top:10px;">3. Paint the part with a finish coat. Here I used a dark-red colored spray paint.</p>
+									<p style="padding-top:10px;">4. Once this coat dries, use a stiff brush (a toothbrush would also work well) to scrub off the salt. This will come off fairly easily and leave a splotchy base coat showing through with a fuzzy edge and some scattered specs around it. It looks very natural when it's done!</p>
+								</div>
+							</div>
+						</section>
+						<section>
+							<a class="image">
+								<img src="images/retroclock_paint_weathering.png" alt="" data-position="top center" />
+							</a>
+							<div class="content">
+								<div class="inner">
+									<p>The finished weathering turned out like shown</p>
+								</div>
+							</div>
+						</section>
+					</section>
+					<section id="one">
+						<div class="inner">
+							<header class="major">
+								<h3 style="padding-bottom:0px;">Setting up the Micro SD Card</h3>
+							</header>
+						</div>
+					</section>
+					<section id="two" class="spotlights">
+						<section>
+							<a class="image">
+								<img src="images/retroclock_os.jpeg" alt="" data-position="top center" />
+							</a>
+							<div class="content">
+								<div class="inner">
+									<p>We start by writing <i>Rasberry Pi OS</i> to the Micro SD-card, using the <a class="else" href="https://www.raspberrypi.org/software/" target="_blank" style="color:#ed4933; border-bottom:transparent;">Raspberry Pi Imager</a>, which you can download for free, on the Official Raspberry Pi website.</p>
+									<p style="padding-top:20px;">Plug the SD-card into your computer, and select <b>Rasberry Pi OS</b> as the <b>Operating System</b>, and the SD-card as the <b>Storage</b> device.</p>
+									<p style="padding-top:20px;">Hold <b>SHIFT + CTRL + X</b> on your computer, to open the advanced options. Here you will need to enable SSH, and typing in your WIFI credentials.</p>
+									<p style="padding-top:20px;">Last but not least, press <b>Write</b></p>
+									<p>When complete, remove the SD-card, and insert it into the RPI.</p>								
+									</p>
+								</div>
+							</div>
+						</section>
+					</section>
+				<!-- Assembly -->
+					<section id="one">
+							<div class="inner" id="assembly">
+								<header class="major">
+									<h2>Assembly</h2>
+								</header>
+								<p>We have now come to assembling the electronics and the enclosure.</p>
+							</div>
+						</section>
+				<section id="two" class="spotlights">
+					<section>
+						<a class="image">
+							<img src="images/retroclock_glue.jpeg" alt="" data-position="top center" />
+						</a>
+						<div class="content">
+							<div class="inner">
+								<header class="major">
+									<h2>Buttons and LED</h2>
+								</header>
+								<p>1. First cut the ends off of four female jumper cables, and then solder them to two pins on each of the buttons, making sure the two different wires are not connected when the button is not pushed. Remember to add heat shrink tubing before soldering.</p>
+								<p style="padding-top:10px;">2. Solder the resistor to the positive end of the LED, and solder two other female jumper cables to the end of the resistor and the negative end of the LED.</p>
+								<p style="padding-top:10px;">3. Now fit the buttons and the LED into there designated spots, and use hot glue to secure them in place.</p>
+								<p style="padding-top:10px;">4. Next fit the display into place in the front, making sure it is turned upright. Additionally also add hot glue if needed, although the fit should already be quite tight.</p>
+								<p style="padding-top:10px;">5. Connect five female to female jumper cables to the pins on the back of the display.</p>
+							</div>
+						</div>
+					</section>
+					<section>
+						<a class="image">
+							<img src="images/retroclock_internal.jpeg" alt="" data-position="top center" />
+						</a>
+						<div class="content">
+							<div class="inner">
+								<header class="major">
+									<h3>Screwing it together</h3>
+								</header>
+								<p>1. Start by screwing the <b>Front</b> onto the <b>Base</b>, lining up the screw holes, and screwing it together from the inside.</p>
+								<p style="padding-top:10px;">2. Now slide the RPi into the slots on the <b>Back</b>-panel, so that the ports are pointing into the holes, and then screwing it in place, using two small screws.</p>
+							</div>
+						</div>
+					</section>
+						<section>
+							<a class="image">
+								<img src="images/retroclock_fritz.jpeg" alt="" data-position="top center" />
+							</a>
+							<div class="content">
+								<div class="inner">
+									<header class="major">
+										<h3>Connecting the wires</h3>
+									</header>
+									<p>1. Then connect the display like shown on the <i>fritzing</i> schematic, as well as connecting the negative jumper from the LED and on of each of the jumpers from the buttons, to one of the avalable grounds on the Pi.</p>
+									<p style="padding-top:10px;">2. Connect the remaining resistor and button female jumpers to any available GPIO pins, on the Pi.</p>
+									<p style="padding-top:10px;">3. Now line up the <b>Base</b> with the holes on the <b>Top</b>, and screw them together. Be sure to hold them tightly together, so the screws can screw correctly and tightly on.</p>
+									<p style="padding-top:10px;">4. Lastly fit the wires and Pi inside the <b>Base</b>, and screw the <b>Back</b> into place.</p>
+								</div>
+							</div>
+						</section>
+					</section>
+				<!-- Setting up the RPi -->
+					<section id="one">
+						<div class="inner" id="setup">
+							<header class="major">
+								<h2>Setting up the RPi</h2>
+							</header>
+							<p>Setting up the RPi</p>
+							<p class="notice"><i class="fa fa-exclamation-circle" style="padding-right:15px;"></i>I expect that you are familiar with Raspberry Pi, SSH and Python for the following steps.</p>
+						</div>
+					</section>
+				<section id="two" class="spotlights">
+				<!-- Code -->
+				<section>	
+					<a class="image">
+						<img src="images/thermo-code.jpg" alt="" data-position="25% 25%" />
+					</a>
+					<div class="content" id="set_up1">
+						<div class="inner">
+							<header class="major">
+								<h3 style="padding-bottom:0px;">Uploading the code</h3>
+							</header>
+							<p><i>Start by powering the PI, and connecting to your PI wirelessly, using the SSH that we enabled earlier.</i></p>
+							<p style="padding-top:20px;">1. Enable the I2C and SPI function in <code>raspi-config</code> under <i>Interfacing Options</i>. Exit and reboot.</p>
+							<pre style="padding-top:10px;"><code>sudo raspi-config</code></pre>
+							<p>2. Run these standard commands in the terminal, to update your pi:</p>
+							<pre style="padding-top:10px;"><code>sudo apt-get update
+sudo apt-get upgrade
+sudo reboot
+sudo apt-get install python3-pip
+sudo pip3 install --upgrade setuptools
+sudo reboot</code></pre>
+							<p>3. Run the following commands to install the necessary adafruit CircuitPython Libraries on RPi:</p>
+							<pre style="padding-top:10px;"><code>cd ~
+sudo pip3 install --upgrade adafruit-python-shell
+wget https://raw.githubusercontent.com/adafruit/Raspberry-Pi-Installer-Scripts/master/raspi-blinka.py
+sudo python3 raspi-blinka.py</code></pre>
+						</div>
+					</div>
+				</section>
+				<section>	
+					<a class="image">
+						<img src="images/thermo-code-mirrored.png" alt="" data-position="25% 25%" />
+					</a>
+					<div class="content" id="set_up1">
+						<div class="inner">
+							<p>4. Run the following command to finally install the necessary libraries for the display: <br><i>For the full documentation for setting up the display, go to <a class="else" href="https://learn.adafruit.com/adafruit-led-backpack/0-54-alphanumeric-python-wiring-and-setup" target="_blank" style="color:#ed4933; border-bottom:transparent;">learn.adafruit.com</a>.</i></p>
+							<pre style="padding-top:10px;"><code>sudo pip3 install adafruit-circuitpython-ht16k33</code></pre>
+							<p>5. Run the following command to open a new python file called "<i>retroclock.py</i>":</p>
+							<pre style="padding-top:10px;"><code>nano retroclock.py</code></pre>
+							<p>6. From the download link below, copy the code for <i>retroclock.py</i> into the newly created file on the RPi:</p>
+							<ul class="actions" style="padding-top: 20px;">
+								<li><a href="downloads/retroclock_code.zip" class="button special">Download .zip <!-- <i class="material-icons">file_download</i> --> </a></li>
+							</ul>
+							<p>7. Now exit out of the file, and the code should run when you run this line:</p>
+							<pre style="padding-top:10px;"><code>python3 retroclock.py</code></pre>
+						</div>
+					</div>
+				</section>
+					<!-- Result and final notes -->
+							<section id="one"></section>
+									<div class="inner">
+										<header class="major">
+											<h2>The result and final notes</h2>
+										</header>
+										<p>That's it! You have now made your very own retro clock, that for now only displays the time, but can be customized to have much more functionality, just by adding more lines of code to the simple python program. If you want to, you can make it show the date, or the weather and temperature outside, by using a simple weather api, or maybe you want the display to show the news or current stock market prices.</p>
+										<p>Now feel free to play around with the idea, and customize it to fit your needs.</p>
+										<p style="padding-top:10px;">I hope you like this project, and if you do, I would very much appreciate it if you wised me best of luck in the <a class="else" href="https://www.instructables.com/contest/retrotech/" target="_blank" style="color:#ed4933; border-bottom:transparent;">RetroTech-contest</a> on Instructables, and feel free to follow me on ​<a class="else" href="https://www.instagram.com/anders644pi/" target="_blank" style="color:#ed4933; border-bottom:transparent;">Instagram</a> and <a class="else" href="https://twitter.com/Anders644PI" target="_blank" style="color:#ed4933; border-bottom:transparent;">Twitter</a> (@Anders644PI) to keep you updated with what I make.</p>
+									</div>
+									<!-- Slideshow container -->
+									<div class="slideshow-container">
+									
+										<div class="mySlides fade">
+										  <div class="numbertext">1 / 3</div>
+										  <img src="images/retroclock_1.jpeg" style="width:100%">
+										</div>
+										
+										<div class="mySlides fade">
+										  <div class="numbertext">2 / 3</div>
+										  <img src="images/retroclock_2.jpeg" style="width:100%">
+										</div>
+										
+										<div class="mySlides fade">
+										  <div class="numbertext">3 / 3</div>
+										  <img src="images/retroclock_4.jpeg" style="width:100%">
+										</div>
+										
+										<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+										<a class="next" onclick="plusSlides(1)">&#10095;</a>
+											
+										</div>
+										<br>
+										
+										<div style="text-align:center">
+										  <span class="dot" onclick="currentSlide(1)"></span> 
+										  <span class="dot" onclick="currentSlide(2)"></span> 
+										  <span class="dot" onclick="currentSlide(3)"></span> 
+									</div>
+								</section>
+							</section>
+						</section>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<ul class="icons">
+								<li><a href="https://github.com/Anders644PI" target="_blank" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
+								<li><a href="https://www.thingiverse.com/Anders644PI/about" target="_blank" class="icon alt fa-share-alt"><span class="label">Thingiverse</span></a></li>
+								<li><a href="https://www.instructables.com/member/Anders644PI/" target="_blank" class="icon alt fa-group"><span class="label">GitHub</span></a></li>
+								<li><a href="https://www.instagram.com/anders644pi/" target="_blank" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="https://twitter.com/Anders644PI" target="_blank" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
+							</ul>
+							<ul class="copyright">
+								<li>PiPalace <i style="padding-left:5px;" class="fa fa-bank"></i></li>
+								<li>By: Anders Severinsen</li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+			<script>
+					var slideIndex = 1;
+					showSlides(slideIndex);
+					
+					function plusSlides(n) {
+					  showSlides(slideIndex += n);
+					}
+					
+					function currentSlide(n) {
+					  showSlides(slideIndex = n);
+					}
+					
+					function showSlides(n) {
+					  var i;
+					  var slides = document.getElementsByClassName("mySlides");
+					  var dots = document.getElementsByClassName("dot");
+					  if (n > slides.length) {slideIndex = 1}    
+					  if (n < 1) {slideIndex = slides.length}
+					  for (i = 0; i < slides.length; i++) {
+						  slides[i].style.display = "none";  
+					  }
+					  for (i = 0; i < dots.length; i++) {
+						  dots[i].className = dots[i].className.replace(" active", "");
+					  }
+					  slides[slideIndex-1].style.display = "block";  
+					  dots[slideIndex-1].className += " active";
+					}
+					</script>
+	</body>
+</html>

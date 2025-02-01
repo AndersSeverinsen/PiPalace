@@ -1,0 +1,487 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>PiPalace</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="icon" href="images/palace-png.png">
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+				<!-- Note: The "styleN" class below should match that of the banner element. -->
+					<header id="header" class="alt style2">
+						<a href="index.html" class="logo"><span><i class="material-icons" style="font-size:30px; padding-top:15px;">home</i></span></a>
+						<nav>
+							<a href="#"><i class="material-icons" style="font-size:30px; padding-top:15px;">arrow_upward</i></a>
+							<a href="#menu"><i class="material-icons" style="font-size:30px; padding-top:15px;">menu</i></a>
+						</nav>
+					</header>
+				
+					<nav id="menu">
+						<ul class="links">
+							<li><a href="#intro" class="scrolly">Introduction</a></li>
+							<li><a href="#fire_xcode" class="scrolly">Firebase and Xcode</a></li>
+							<li><a href="#xcode" class="scrolly">Finishing Xcode</a></li>
+							<li><a href="#rasppi" class="scrolly">Raspberry Pi setup</a></li>
+							<li><a href="#enclosure" class="scrolly">Enclosure</a></li>
+							<li><a href="#assembly" class="scrolly">Assembly</a></li>
+							<li><a href="#result" class="scrolly">The result</a></li>
+						</ul>
+						<ul class="actions vertical">
+							<li><a href="index.html" class="button special fit">Home</a></li>
+							<!-- <li><a href="#" class="button fit">Log In</a></li> -->
+						</ul>
+					</nav>
+
+				<!-- Banner -->
+				<!-- Note: The "styleN" class below should match that of the header element. -->
+					<section id="banner" class="style3">
+						<div class="inner">
+							<span class="image">
+								<img src="images/appcontrol-banner.jpg" alt="" />
+							</span>
+							<header class="major">
+								<h1>RPi IoT Smart Light Using Firebase</h1>
+							</header>
+							<div class="content">
+								<p>Demonstrated with a 3D printed case, a Pi Zero W, a Powerboost 1000C, a battery and a Blinkt!</p>
+							</div>
+						</div>
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Introduction -->
+							<section id="one">
+								<div class="inner" id="intro">
+									<header class="major">
+										<h2>Introduction</h2>
+									</header>
+									<p style="padding-bottom:15px;">This guide shows you how to make and setup an app to control the Raspberry Pi via <a class="else" href="https://firebase.google.com/" target="_blank" style="color:#ed4933; border-bottom:transparent;">Firebase</a> (A online database).
+And then 3D printing a case for the Pi Zero W, a Powerboost 1000C, a battery, and a Blinkt!.</p>
+									<p class="notice"><i class="fa fa-exclamation-circle" style="padding-right:15px;"></i>To be able to follow along most easily, i recommend being familiar with <a class="else" href="https://developer.apple.com/xcode/" target="_blank" style="color:black; border-bottom:transparent;">Xcode</a> and Raspberry Pi.</p>
+								</div>
+							</section>
+							<section id="two" class="spotlights">
+								<section>
+									<a class="image">
+										<img src="images/appcontrol-componets.jpg" alt="" data-position="center center" />
+									</a>
+									<div class="content">
+										<div class="inner">
+											<header class="major">
+												<h3>You will need:</h3>
+											</header>
+												<p> - A <a class="else" href="https://www.adafruit.com/product/3410" target="_blank" style="color:#ed4933; border-bottom:transparent;">Raspberry Pi Zero W with adapters and GPIO-headers</a> <i>(or the ordinary Pi Zero with a WiFi dongle)</i></p>
+												<p> - A <a class="else" href="https://www.adafruit.com/product/2465" target="_blank" style="color:#ed4933; border-bottom:transparent;">PowerBoost 1000 C</a></p>
+												<p> - A <a class="else" href="https://www.adafruit.com/product/2011" target="_blank" style="color:#ed4933; border-bottom:transparent;">Lithium Ion Battery - 3.7v 2000mAh</a></p>
+												<p> - A <a class="else" href="https://shop.pimoroni.com/products/blinkt" target="_blank" style="color:#ed4933; border-bottom:transparent;">Blinkt!</a> <i>(or any pHAT/HAT, that: doesn't use pin 5 physical and HAT's should be flat on the bottom.)</i></p>
+												<p> - A 8GB or higher Micro SD Card, with Raspbian Stretch (with desktop) on it</p>
+												<p> - A Keyboard and a mouse <i>(but you can also connect over ssh, if you now how)</i></p>
+												<p> - A connection to a monitor or TV <i>(or ssh!)</i></p>
+												<p> - Scrap screws</p>
+												<p> - Small wires</p>
+												<p> - A small <a class="else" href="https://shop.pimoroni.com/products/spdt-mini-power-switch" target="_blank" style="color:#ed4933; border-bottom:transparent;">switch</a> and a small <a class="else" href="https://www.adafruit.com/product/367" target="_blank" style="color:#ed4933; border-bottom:transparent;">button</a></p>
+												<p> - A 3D printer and one spool of any color PLA filament, and one spool of transparent PLA<i> (or you could use a 3D service like <a class="else" href="https://www.3dhubs.com/" target="_blank" style="color:#ed4933; border-bottom:transparent;">3D Hubs</a> to print it for you)</i></p>
+										</div>
+									</div>
+								</section>
+							</section>
+
+				<!-- Firebase and Xcode -->
+							<section id="one">
+								<div class="inner" id="fire_xcode">
+									<header class="major">
+										<h2>Firebase and Xcode</h2>
+									</header>
+									<p>First we will setup Firebase with the app, so we can communicate from the app to the Pi.</p>
+								</div>
+							</section>
+					<section id="two" class="spotlights">
+						<section>
+							<a class="image">
+								<img src="images/firebase.jpg" alt="" data-position="top center" />
+							</a>
+							<div class="content">
+								<div class="inner">
+									<p style="padding-top:15px;"><i>If you get confuced, you can watch <a class="else" href="https://www.youtube.com/watch?v=oesmSjIbGJc" target="_blank" style="color:#ed4933; border-bottom:transparent;">this</a> video.</i></p>
+									<p>1. Open up Xcode, and make a new Xcode project. Choose <i>Single View App</i> and call it <b>RPiAppControl</b>, and make sure that the language is Swift. Press <i>Next</i>, and save it.</p>
+									<p>2. Copy your <b>Bundle Identifier</b>, because we will need that later.</p>
+									<p>3. In <a class="else" href="https://firebase.google.com/" target="_blank" style="color:#ed4933; border-bottom:transparent;">Firebase</a>, login with your Google account, and click <b>Go to console</b>.</p>
+									<p>4. Create a new project, and call it <b>RPiAppControl</b>.</p>
+									<p>5. Click <b>Add Firebase to your IOS App</b>. Paste in your <b>Bundle Identifier</b>, and press <b>Register App</b>.</p>
+								</div>
+							</div>
+						</section>
+						<section>
+							<a class="image">
+								<img src="images/appcontrol-firebase-googleinfo.jpg" alt="" data-position="top center" />
+							</a>
+							<div class="content">
+								<div class="inner">
+									<p>6. Download the <b>GoogleService-Info.plist</b>, and drag it into your Xcode Project.</p>
+									<p>7. Back at Firebase, press <b>Continue</b>. Then open a terminal window and navigate to the location of your Xcode project for your app.</p>
+									<p>8. Run this command: <code>pod init</code></p>
+									<p>9. Open the <b>Podfile</b>, and under <code>use_frameworks!</code>, add this line:</p>
+									<pre style="padding-top:10px;"><code>pod 'Firebase/Core'</code></pre>
+									<p>10. Back in the terminal type: <b>pod install</b>, and close Xcode.</p>
+								</div>
+							</div>
+						</section>
+						<section>
+							<a class="image">
+								<img src="images/appcontrol-podfile.jpg" alt="" data-position="top center" />
+							</a>
+							<div class="content">
+								<div class="inner">
+									<p>11. In <i>Finder</i>, navigate to your Xcode project, and open the newly created <b>.xcworkspace</b> file.</p>
+									<p>12. In here go to the <b>AppDelegate.swift</b>, and under <code>import UIKit</code> add this line: <code>import Firebase</code>. And in the <b>application</b> function, add this line: <code>FIRApp.configure()</code>.</p>
+									<p>13. Back in Firebase, click <b>Continue</b> and then <b>Finish</b>.</p>
+									<p>14. Go to <b>Database</b>, then <b>Rules</b>, and set the <code>".read"</code> and <code>".write"</code> to <code>true</code>. Press <b>PUBLISH</b>.</p>
+									<p>15. Back at Xcode, open up the <b>Podfile</b>, and under the first line we set in, add this:</p>
+									<pre style="padding-top:10px;"><code>pod 'Firebase/Database'</code></pre>
+									<p>16. Back in the terminal, run <code>pod install</code> again.</p>
+								</div>
+							</div>
+						</section>
+					</section>
+
+				<!-- Finishing Xcode -->
+					<section id="one">
+							<div class="inner" id="xcode">
+								<header class="major">
+									<h2>Finishing Xcode</h2>
+								</header>
+								<p>We will now finish the code and layout in Xcode.</p>
+								<p class="notice"><i class="fa fa-exclamation-circle" style="padding-right:15px;"></i>This is using Xcode 9 and Swift 4</p>
+							</div>
+						</section>
+				<section id="two" class="spotlights">
+					<section>
+						<a class="image">
+							<img src="images/appcontrol-viewController.jpg" alt="" data-position="top center" />
+						</a>
+						<div class="content">
+							<div class="inner">
+								<header class="major">
+									<h3>Code for the ViewController</h3>
+								</header>
+								<p>1. At the top of the ViewController, and under the <code>import UIKit</code>, add this:</p>
+								<pre style="padding-top:10px;"><code>import Firebase
+import FirebaseDatabase</code></pre>
+								<p>2. On the bottom of the ViewController, and under the <b>didReceiveMemoryWarning</b>-function, copy paste this functions for each button:</p>
+								<pre style="padding-top:10px;"><code>func num1(state: String){
+  let ref = FIRDatabase.database().reference()
+  let post : [String: Any] = ["state": state]
+  ref.child("num1").setValue(post)
+}</code></pre>
+								<p class="notice"><i class="fa fa-exclamation-circle" style="padding-right:15px;"></i>Remember to change the <b style="color:black;">(number)</b></p>
+								<p style="padding-top:10px;">3. In the <b>viewDidLoad</b> function, under the <code>super.viewDidLoad()</code>, insert this line for each button <i>(For multiple buttons, just change the <b style="color:#ed4933">(number)</b>. See picture...)</i> :</p><pre style="padding-top:10px;"><code>num1(state: "OFF")</code></pre>
+							</div>
+						</div>
+					</section>
+					<section>
+						<a class="image">
+							<img src="images/appcontrol-button.jpg" alt="" data-position="top center" />
+						</a>
+						<div class="content">
+							<div class="inner">
+								<header class="major">
+									<h3>Layout of the Main.storyboard and buttons</h3>
+								</header>
+								<p>1. Go to the Main.storyboard, and put in some buttons. You could layout them like I did, or customize them as you like.</p>
+								<p>2. Connect the buttons with the ViewController. Each button need to be connected twice: 
+One as an action and UIButton called <b>num<b style="color:#ed4933">(number)</b>Button</b>, and the other one as the default Outlet and call it <b>num<b style="color:#ed4933">(number)</b>Color</b>. <i>See picture...</i></p>
+							</div>
+						</div>
+					</section>
+						<section>
+							<a class="image">
+								<img src="images/appcontrol-button_view.jpg" alt="" data-position="top center" />
+							</a>
+							<div class="content">
+								<div class="inner">
+									<p>3. Then for all of the buttons, paste in this line to each of the functions. <i>See picture...</i> :</p>
+									<pre style="padding-top:10px;"><code>if self.num1Color.backgroundColor == UIColor.lightGray { // Sets the background color to lightGray
+  num1(state: "ON") // Sends the state: "ON" to firebase
+  self.num1Color.backgroundColor = UIColor(red:0.96, green:0.41, blue:0.26, alpha:1.0) // Sets the background color to reddish
+} else {
+  num1(state: "OFF") // Sends the state: "OFF" to firebase
+  self.num1Color.backgroundColor = UIColor.lightGray // Sets the background color to lightGray
+}</code></pre>
+								</div>
+							</div>
+						</section>
+						<section>
+							<a class="image">
+								<img src="images/appcontrol-database.jpg" alt="" data-position="top center" />
+							</a>
+							<div class="content">
+								<div class="inner">
+									<p>Now you should be able to test it out, by running the app, and when you press the buttons, you should see it changing <i>state</i>, in the <b>Realtime Database</b> in Firebase.</p>
+								</div>
+							</div>
+						</section>
+						<section>
+							<a class="image">
+								<img src="images/appcontrol-appicon.jpg" alt="" data-position="top center" />
+							</a>
+							<div class="content">
+								<div class="inner">
+									<header class="major">
+										<h3>Finishing touches <i>(Optional)</i></h3>
+									</header>
+									<p>1. Download the images below, and insert the <b>LaunchScreen-image.jpeg</b> into a <i>image-view</i>, in the <b>LaunchScreen.storyboard.</b></p>
+									<p>2. Go to <b>Assets.xcassets</b> and then <b>AppIcon</b>. In here, place in the corresponding AppIcon<i>-size</i>.</p>
+									<ul class="actions" style="padding-top: 20px;">
+										<li><a href="downloads/AppControl-AppIcon.zip" class="button special">Download .zip <!-- <i class="material-icons">file_download</i> --> </a></li>
+									</ul>
+								</div>
+							</div>
+						</section>
+					</section>
+				
+				<!-- Raspberry Pi setup -->
+					<section id="one">
+							<div class="inner" id="rasppi">
+								<header class="major">
+									<h2>Raspberry Pi setup</h2>
+								</header>
+								<p>Now we have to setup the Pi with Firebase, so the app can communicate, throw Firebase, to the Pi.</p>
+								<p><i>I based the code on some i found online, that you can find <a class="else" href="https://github.com/rohankatakam/rpi-code/blob/master/led-iot.py" target="_blank" style="color:#ed4933; border-bottom:transparent;">here</a>, if you are interested.</i></p>
+							</div>
+						</section>
+					<section id="two" class="spotlights">
+						<section>
+							<a class="image">
+								<img src="images/appcontrol-rpi-pyrebase.jpg" alt="" data-position="top center" />
+							</a>
+							<div class="content">
+								<div class="inner">
+									<p>1. In the terminal, run the usual updates:</p>
+									<pre style="padding-top:10px;"><code>sudo apt-get update && sudo apt-get dist-upgrade</code></pre>
+									<p>2. Then we will import pyrebase (Firebase):</p>
+									<pre style="padding-top:10px;"><code>sudo pip install pyrebase
+sudo pip3 install pyrebase
+sudo pip3 install --upgrade google-auth-oauthlib</code></pre> <!-- ??? -->
+									<p>3. Now download the Blinkt library:</p>
+									<pre style="padding-top:10px;"><code>curl https://get.pimoroni.com/blinkt | bash</code></pre>
+									<p>4. Clone my GitHub repository:</p>
+									<pre style="padding-top:10px;"><code>git clone https://github.com/Anders644PI/RPiAppControl.git
+cd RPiAppControl</code></pre>
+									<p>5. Edit the <b>AppRPiControl_Template.py</b>
+									<pre style="padding-top:10px;"><code>nano RPiAppControl_Template.py</code></pre>
+									<p>6. Fill in your Firebase ApiKey and ProjectId. You can find these by going to your Firebase Project, and clicking <b>Add Another App</b> and then <b>Add Firebase to your web app</b>. Here you can copy your <i>ApiKey</i> and <i>ProjectId</i>.</p>
+									<p>7. Customize the functions, and save your changes by pressing <b>ctrl-o</b> <b>(enter)</b> and close with <b>ctrl-x</b>.</p>
+									<p>8. Now run it with:</p>
+									<pre style="padding-top:10px;"><code>sudo python3 RPiAppControl_Template.py</code></pre>
+								</div>
+							</div>
+						</section>
+						<section>
+							<a class="image">
+								<img src="images/appcontrol-blinkt.jpg" alt="" data-position="top center" />
+							</a>
+							<div class="content">
+								<div class="inner">
+									<p>9. Then if you are using a Blinkt, you can try the example, when you have filled in your Firebase ApiKey and ProjectId:</p>
+									<pre style="padding-top:10px;"><code>cd examples
+nano RPiAppControl_blinkt_demo.py</code></pre>
+<pre style="padding-top:10px;"><code>sudo python3 RPiAppControl_blinkt_demo.py</code></pre>
+									<p class="notice"><i class="fa fa-exclamation-circle" style="padding-right:15px;"></i>Keep in mind that after you run the script, it takes about a minute to get ready (At least on the Pi Zero). And the script has to be run in python 3.</p>
+									<p>10. BONUS: If you want the script to run on boot, you can find out how, <a class="else" href="https://learn.pimoroni.com/tutorial/sandyj/running-scripts-at-boot" target="_blank" style="color:#ed4933; border-bottom:transparent;">here</a>.</p>
+								</div>
+							</div>
+						</section>
+						<section>
+							<a class="image">
+								<img src="images/appcontrol-closeup.jpg" alt="" data-position="top center" />
+							</a>
+							<div class="content">
+								<div class="inner">
+									<header class="major">
+										<h2>Shutdown/Power button</h2>
+									</header>
+									<p><i>It's optional to install a power button, but I recommend it.</i></p>
+									<p>Follow along with <a class="else" href="https://www.youtube.com/watch?v=4nTuzIY0i3k" target="_blank" style="color:#ed4933; border-bottom:transparent;">this</a> video, to set it up.</p>
+									<p class="notice"><i class="fa fa-exclamation-circle" style="padding-right:15px;"></i>Keep in mind that this uses physical pin 5 on the Pi, so some HATs won't work.</p>
+								</div>
+							</div>
+						</section>
+					</section>
+						
+					<!-- Enclosure -->
+						<section id="one">
+							<div class="inner" id="enclosure">
+								<header class="major">
+									<h2>Enclosure</h2>
+								</header>
+								<p>Now to show the potential of the app control, I designed a 3D printed enclosure, to house the Pi Zero W, a Blinkt, a Powerboost 1000C and a battery.</p>
+								<p>But you could also make your own, and adapt it for what you want to use the app for.</p>
+							</div>
+						</section>
+							<section id="two" class="spotlights">
+								<section>
+										<a class="image">
+											<img src="images/appcontrol-animation.gif" alt="" data-position="25% 25%" />
+										</a>
+										<div class="content">
+											<div class="inner">
+												<header class="major">
+													<h3>3D printing</h3>
+												</header>
+												<p style="padding-bottom:10px;"><i>Print the parts from the linkt below or directly from thingiverse <a class="else" href="https://www.thingiverse.com/thing:2756740" target="_blank" style="color:#ed4933; border-bottom:transparent;">here</a>.</i></p>
+												<p>You will have to print the following:</p>
+												<p>- The <b>Base</b> (Slate Gray)</p>
+												<p>- The <b>Powerboost Rest</b> (Orange)</p>
+												<p>- The <b>Top</b> (Transparent) - Here you have multiple options; There is one with crystals (need support), one without, and one with GPIO cut-out.</p>
+												<ul class="actions" style="padding-top: 20px;">
+													<li><a href="downloads/RPiSmartLight.zip" class="button special">Download .zip <!-- <i class="material-icons">file_download</i> --> </a></li>
+												</ul>
+											</div>
+										</div>
+									</section>
+								<section>
+									<a class="image">
+										<img src="images/appcontrol-fritzing.jpg" alt="" data-position="center center" />
+									</a>
+									<div class="content">
+										<div class="inner" id="assembly">
+											<header class="major">
+												<h3>Assembly</h3> 
+											</header>
+											<p>1. Solder wires as shown on the circuit diagram. The wires are <u>NOT</u> to scale.</p>
+											<p>2. Screw the Powerboost to the Powerboost Rest, ontop of the stand-off's, with small scrap screws.</p>
+											<p class="notice"><i class="fa fa-exclamation-circle" style="padding-right:15px;"></i>I recommend punching holes in the stand-off's, to give the screws a better grip.</p>
+										</div>
+									</div>
+								</section>
+								<section>
+									<a class="image">
+										<img src="images/appcontrol-inbox.jpeg" alt="" data-position="center center" />
+									</a>
+									<div class="content">
+										<div class="inner">
+											<p>3. Place the components in the box, as shown on the picture. The Pi shall sit on the smallest stand-offs, and the Powerboost Rest ontop of the battery. The switch and button have to be set into posision and through the cut-outs.</p>
+											<p>4. Screw the components down with screws.</p>
+											<p>5. Snap on the lid, by putting it down at an angle. To remove it, use a nail or a small screwdriver.</p>
+										</div>
+									</div>
+								</section>
+							</section>
+						</section>
+								<section id="one"></section>
+									<div class="inner" id="result">
+										<header class="major">
+											<h2>The result</h2>
+										</header>
+										<p>Congratulations, you're done!</p>
+									</div>
+									<!-- Slideshow container -->
+									<div class="slideshow-container">
+									
+										<div class="mySlides fade">
+										  <div class="numbertext">1 / 3</div>
+										  <img src="images/appcontrol-appUSB.jpg" style="width:100%">
+										</div>
+										
+										<div class="mySlides fade">
+										  <div class="numbertext">2 / 3</div>
+										  <img src="images/appcontrol-appPower.jpg" style="width:100%">
+										</div>
+										
+										<div class="mySlides fade">
+										  <div class="numbertext">3 / 3</div>
+										  <img src="images/appcontrol-appcontrol.jpg" style="width:100%">
+										</div>
+										
+										<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+										<a class="next" onclick="plusSlides(1)">&#10095;</a>
+											
+										</div>
+										<br>
+										
+										<div style="text-align:center">
+										  <span class="dot" onclick="currentSlide(1)"></span> 
+										  <span class="dot" onclick="currentSlide(2)"></span> 
+										  <span class="dot" onclick="currentSlide(3)"></span> 
+									</div>
+								</section>
+							</section>
+						</section>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<ul class="icons">
+								<li><a href="https://github.com/Anders644PI" target="_blank" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
+								<li><a href="https://www.thingiverse.com/Anders644PI/about" target="_blank" class="icon alt fa-share-alt"><span class="label">Thingiverse</span></a></li>
+								<li><a href="https://www.instructables.com/member/Anders644PI/" target="_blank" class="icon alt fa-group"><span class="label">GitHub</span></a></li>
+								<li><a href="https://www.instagram.com/anders644pi/" target="_blank" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="https://twitter.com/Anders644PI" target="_blank" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
+							</ul>
+							<ul class="copyright">
+								<li>PiPalace <i style="padding-left:5px;" class="fa fa-bank"></i></li>
+								<li>By: Anders Severinsen</li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+			<script>
+					var slideIndex = 1;
+					showSlides(slideIndex);
+					
+					function plusSlides(n) {
+					  showSlides(slideIndex += n);
+					}
+					
+					function currentSlide(n) {
+					  showSlides(slideIndex = n);
+					}
+					
+					function showSlides(n) {
+					  var i;
+					  var slides = document.getElementsByClassName("mySlides");
+					  var dots = document.getElementsByClassName("dot");
+					  if (n > slides.length) {slideIndex = 1}    
+					  if (n < 1) {slideIndex = slides.length}
+					  for (i = 0; i < slides.length; i++) {
+						  slides[i].style.display = "none";  
+					  }
+					  for (i = 0; i < dots.length; i++) {
+						  dots[i].className = dots[i].className.replace(" active", "");
+					  }
+					  slides[slideIndex-1].style.display = "block";  
+					  dots[slideIndex-1].className += " active";
+					}
+					</script>
+	</body>
+</html>

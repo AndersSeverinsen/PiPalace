@@ -1,0 +1,253 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>PiPalace</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="icon" href="images/palace-png.png">
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+				<!-- Note: The "styleN" class below should match that of the banner element. -->
+					<header id="header" class="alt style2">
+						<a href="index.html" class="logo"><span><i class="material-icons" style="font-size:30px; padding-top:15px;">home</i></span></a>
+						<nav>
+							<a href="#"><i class="material-icons" style="font-size:30px; padding-top:15px;">arrow_upward</i></a>
+							<a href="#menu"><i class="material-icons" style="font-size:30px; padding-top:15px;">menu</i></a>
+						</nav>
+					</header>
+				
+					<nav id="menu">
+						<ul class="links">
+							<li><a href="#intro" class="scrolly">Introduction</a></li>
+							<li><a href="#materials" class="scrolly">Materials</a></li>
+							<li><a href="#weather" class="scrolly">Weather data</a></li>
+							<li><a href="#set_up" class="scrolly">Setting up the Pi</a></li>
+							<li><a href="#acces" class="scrolly">3D Printed accessories</a></li>
+							<li><a href="#result" class="scrolly">The result</a></li>
+						</ul>
+						<ul class="actions vertical">
+							<li><a href="index.html" class="button special fit">Home</a></li>
+							<!-- <li><a href="#" class="button fit">Log In</a></li> -->
+						</ul>
+					</nav>
+					
+				<!-- Banner -->
+				<!-- Note: The "styleN" class below should match that of the header element. -->
+					<section id="banner" class="style1">
+						<div class="inner">
+							<span class="image">
+								<img src="images/weather_scroll.gif" alt="" />
+							</span>
+							<header class="major">
+								<h1>RPi Weather Station and Digital Clock</h1>
+							</header>
+							<div class="content">
+								<p></p>
+							</div>
+						</div>
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Introduction -->
+							<section id="one">
+								<div class="inner" id="intro">
+									<header class="major">
+										<h2>Introduction</h2>
+									</header>
+									<p>This is a quick and easy project to make, and a nice display to show off. It displays both the time, wheather conditions and temperature.</p>
+									<p>The code is based on <a class="else" href="https://www.youtube.com/watch?v=7SRB0O4m9TY" target="_blank" style="color:#ed4933; border-bottom:transparent;">StuffWithKirby</a>'s code on reading JSON weather data in python, and <a class="else" href="https://github.com/SteveAmor/Raspberry-Pi-Sense-Hat-Clock" target="_blank" style="color:#ed4933; border-bottom:transparent;">SteveAmor</a> on Github's super cool SenseHat digital clock code.</p>
+								</div>
+							</section>
+							<section id="two" class="spotlights">
+								<section>
+									<a class="image">
+										<img src="images/weather_parts.jpg" alt="" data-position="center center" />
+									</a>
+									<div class="content" id="materials">
+										<div class="inner">
+											<header class="major">
+												<h3>You will need:</h3>
+											</header>
+												<p> - A <a class="else" href="https://www.adafruit.com/product/3055" target="_blank" style="color:#ed4933; border-bottom:transparent;">Raspberry Pi 3</a> <i>(Any 40-pin Raspberry Pi will work)</i></p>
+												<p> - A <a class="else" href="https://www.adafruit.com/product/2738" target="_blank" style="color:#ed4933; border-bottom:transparent;">Raspberry Pi SenseHat</a> <i>(Or any other display, to display the weather data on)</i></p>
+												<p> - A <a class="else" href="https://www.adafruit.com/product/1995" target="_blank" style="color:#ed4933; border-bottom:transparent;">5V 2.4A Power Supply</a> for Raspberry Pi</p>
+												<p> - A 8GB or higher Micro SD Card with the latest version of Raspian</p>
+												<p> - A 3D printer and a spools of any color PLA <i>(Optional)</i></p>
+												<p> - <a class="else" href="https://www.adafruit.com/product/3299" target="_blank" style="color:#ed4933; border-bottom:transparent;">This</a> pack of screws and standoffs <i>(Optional: You only need this if you want to use the diffuser)</i></p>
+										</div>
+									</div>
+								</section>
+							<section>
+								<a class="image">
+									<img src="images/weather_api-key.jpg" alt="" data-position="25% 25%" />
+								</a>
+								<div class="content" id="weather">
+									<div class="inner">
+										<header class="major">
+											<h2>Weather data</h2>
+										</header>
+										<p><i>We get the weather data from <a class="else" href="https://openweathermap.org/" target="_blank" style="color:#ed4933; border-bottom:transparent;">OpenWeatherMap.org</a>, but you could of course add a termister or like, and read data from that directly, if you really wanted to.</i></p>
+										<p>1. Start by making a FREE account on OpenWeatherMap.org.</p>
+										<p>2. Then copy your api-key to use later.</p>
+										<p>3. Now download and open the <b>city.list.json</b> file, and search for your city, and copy the city-id for later.</p>
+										<ul class="actions" style="padding-top: 20px;">
+											<li><a href="downloads/city.list.json.zip" class="button special">Download .zip <!-- <i class="material-icons">file_download</i> --> </a></li>
+										</ul>
+									</div>
+								</div>
+							</section>
+							<section>	
+								<a class="image">
+									<img src="images/weather_code.png" alt="" data-position="25% 25%" />
+								</a>
+								<div class="content" id="set_up">
+									<div class="inner">
+										<header class="major">
+											<h2>Setting up the Pi</h2>
+										</header>
+										<p>1. In the terminal on the Pi (with connetion to the internet) run this command, to get the Pi setup:</p>
+										<pre style="padding-top:10px;"><code>sudo apt-get update && sudo apt-get upgrade</code></pre>
+										<p>2. Now download my github repo and edit the script:</p>
+										<pre style="padding-top:10px;"><code>git clone https://github.com/Anders644PI/RPi-SenseHat-Digital-Clock-and-Weather-Station.git
+cd RPi-SenseHat-Digital-Clock-and-Weather-Station
+nano RPi_Weather_Station.py</code></pre>
+										<p>3. In the <b>RPi_Weather_Station.py</b> paste in your api-key and your city-id. You can also change the units to imperial (fahrenheit), if you want that over metric (degrees).</p>
+										<p>4. Now run it, and it should work great. But if you have issues, feel free to tell me in the comments.</p>
+										<pre style="padding-top:10px;"><code>sudo python RPi_Weather_Station.py</code></pre>
+									</div>
+								</div>
+							</section>
+							<section>	
+								<a class="image">
+									<img src="images/weather_printed_parts.jpg" alt="" data-position="25% 25%" />
+								</a>
+								<div class="content" id="acces">
+									<div class="inner">
+										<header class="major">
+											<h2>3D Printed accessories</h2>
+										</header>
+										<p style="padding-bottom:20px;"><i>This step is optional, by now you already have a functional weather station. But when i have access to a 3D-printer, I better use it.</i></p>
+										<p>1. First upgrade is a diffuser for the SenseHat, that can be screwed to the Hat with two screws and two standoffs for the Pi. Some of <a class="else" href="https://www.adafruit.com/product/3299" target="_blank" style="color:#ed4933; border-bottom:transparent;">these</a> should work fine. Download here:</p>
+										<p>2. Second upgrade is a vertical stand for the Pi. This one requires no screws, it just slides onto the USB-ports. This does make the USB- and Ethernetports not functional. Download here:</p>
+									</div>
+								</div>
+							</section>
+						</section>
+							<section id="one">
+								<div class="inner" id="result">
+									<header class="major">
+										<h2>The result</h2>
+									</header>
+									<p>Congratulations, you're done!!!</p>
+								</div>
+									<!-- Slideshow container -->
+									<div class="slideshow-container">
+									
+										<div class="mySlides fade">
+										  <div class="numbertext">1 / 3</div>
+										  <img src="images/weather_cloud_side_edit.jpg" style="width:100%">
+										</div>
+										
+										<div class="mySlides fade">
+										  <div class="numbertext">2 / 3</div>
+										  <img src="images/weather_banner_wide.jpg" style="width:100%">
+										</div>
+										
+										<div class="mySlides fade">
+										  <div class="numbertext">3 / 3</div>
+										  <img src="images/weather_ontop.jpg" style="width:100%">
+										</div>
+										
+										<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+										<a class="next" onclick="plusSlides(1)">&#10095;</a>
+											
+										</div>
+										<br>
+										
+										<div style="text-align:center">
+										  <span class="dot" onclick="currentSlide(1)"></span> 
+										  <span class="dot" onclick="currentSlide(2)"></span> 
+										  <span class="dot" onclick="currentSlide(3)"></span> 
+									</div>
+								</section>
+							</section>
+						</section>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<ul class="icons">
+								<li><a href="https://github.com/Anders644PI" target="_blank" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
+								<li><a href="https://www.thingiverse.com/Anders644PI/about" target="_blank" class="icon alt fa-share-alt"><span class="label">Thingiverse</span></a></li>
+								<li><a href="https://www.instructables.com/member/Anders644PI/" target="_blank" class="icon alt fa-group"><span class="label">GitHub</span></a></li>
+								<li><a href="https://www.instagram.com/anders644pi/" target="_blank" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="https://twitter.com/Anders644PI" target="_blank" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
+							</ul>
+							<ul class="copyright">
+								<li>PiPalace <i style="padding-left:5px;" class="fa fa-bank"></i></li>
+								<li>By: Anders Severinsen</li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+			<script>
+					var slideIndex = 1;
+					showSlides(slideIndex);
+					
+					function plusSlides(n) {
+					  showSlides(slideIndex += n);
+					}
+					
+					function currentSlide(n) {
+					  showSlides(slideIndex = n);
+					}
+					
+					function showSlides(n) {
+					  var i;
+					  var slides = document.getElementsByClassName("mySlides");
+					  var dots = document.getElementsByClassName("dot");
+					  if (n > slides.length) {slideIndex = 1}    
+					  if (n < 1) {slideIndex = slides.length}
+					  for (i = 0; i < slides.length; i++) {
+						  slides[i].style.display = "none";  
+					  }
+					  for (i = 0; i < dots.length; i++) {
+						  dots[i].className = dots[i].className.replace(" active", "");
+					  }
+					  slides[slideIndex-1].style.display = "block";  
+					  dots[slideIndex-1].className += " active";
+					}
+					</script>
+					
+	</body>
+</html>

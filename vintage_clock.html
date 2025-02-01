@@ -1,0 +1,364 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>PiPalace</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="icon" href="images/palace-png.png">
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+				<!-- Note: The "styleN" class below should match that of the banner element. -->
+					<header id="header" class="alt style2">
+						<a href="index.html" class="logo"><span><i class="material-icons" style="font-size:30px; padding-top:15px;">home</i></span></a>
+						<nav>
+							<a href="#"><i class="material-icons" style="font-size:30px; padding-top:15px;">arrow_upward</i></a>
+							<a href="#menu"><i class="material-icons" style="font-size:30px; padding-top:15px;">menu</i></a>
+						</nav>
+					</header>
+				
+					<nav id="menu">
+						<ul class="links">
+							<li><a href="#intro" class="scrolly">Introduction</a></li>
+							<li><a href="#enclosure" class="scrolly">Enclosure</a></li>
+							<li><a href="#sd_card" class="scrolly">SD Card</a></li>
+							<li><a href="#retropie" class="scrolly">RetroPie</a></li>
+							<li><a href="#touch" class="scrolly">Touchscreen</a></li>
+							<li><a href="#result" class="scrolly">The result</a></li>
+						</ul>
+						<ul class="actions vertical">
+							<li><a href="index.html" class="button special fit">Home</a></li>
+							<!-- <li><a href="#" class="button fit">Log In</a></li> -->
+						</ul>
+					</nav>
+					
+				<!-- Banner -->
+				<!-- Note: The "styleN" class below should match that of the header element. -->
+					<section id="banner" class="style2">
+						<div class="inner">
+							<span class="image">
+								<img src="images/vintageclock-banner.jpg" alt="" />
+							</span>
+							<header class="major">
+								<h1>Vintage Clock</h1>
+							</header>
+							<div class="content">
+								<p>It displays the time, wheather conditions, temperature and it shows if you have new unread emails</p>
+							</div>
+						</div>
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Introduction -->
+							<section id="one">
+								<div class="inner" id="intro">
+									<header class="major">
+										<h2>Introduction</h2>
+									</header>
+									<p>This guide shows you how to make and setup a retro-looking TV, with some really cool features, with a Raspberry Pi, a Touchscreen and some 3D printed parts.</p>
+								</div>
+							</section>
+							<section id="two" class="spotlights">
+								<section>
+									<a href="generic.html" class="image">
+										<img src="images/vintageclock-parts.jpg" alt="" data-position="center center" />
+									</a>
+									<div class="content">
+										<div class="inner">
+											<header class="major">
+												<h3>You will need:</h3>
+											</header>
+												<p> - A <a class="else" href="https://www.adafruit.com/product/3400" target="_blank" style="color:#ed4933; border-bottom:transparent;">Raspberry Pi Zero W</a> <i>(or Pi Zero with WiFi dongle)</i></p>
+												<p> - A <a class="else" href="https://www.adafruit.com/product/1911" target="_blank" style="color:#ed4933; border-bottom:transparent;">Quad Alphanumeric Display 0.54" Digits</a></p>
+												<p> - A <a class="else" href="https://www.adafruit.com/product/1995" target="_blank" style="color:#ed4933; border-bottom:transparent;">5V 2.4A Power Supply</a> for Raspberry Pi</p>
+												<p> - A 8GB or higher Micro SD Card with Raspian</p>
+												<p> - A 3D printer and two spools of any color PLA</p>
+												<p> - A dark red and silver spray paint<i>(optional: you could just stick with the color of the filament)</i></p>
+												<p> - Two <a class="else" href="https://www.adafruit.com/product/367" target="_blank" style="color:#ed4933; border-bottom:transparent;">small buttons</a></p>
+												<p> - A 3mm red LED and resistor</p>
+												<p> - Small scrap screws (minimum 6)</p>
+												<p> - <a class="else" href="https://www.adafruit.com/product/266" target="_blank" style="color:#ed4933; border-bottom:transparent;">Female to Female Jumper Wires</a> (or normal wires, if you want to solder all off the connections)</p>
+												<p> - Tools: A Soldering iron and solder, a Hot Glue Gun and Hot Glue and a Screwdriver</p>
+										</div>
+									</div>
+								</section>
+							</section>
+
+							<!-- Enclosure -->
+
+							<section id="one">
+									<div class="inner" id="enclosure">
+										<header class="major">
+											<h2>Enclosure</h2>
+										</header>
+										<p>I made a 3D printed enclosure, but you could also put it into any other project enclosure.</p>
+									</div>
+							</section>
+							<section id="two" class="spotlights">
+								<section>
+									<a class="image">
+										<img src="images/vintageclock-animation.gif" alt="" data-position="25% 25%" />
+									</a>
+									<div class="content">
+										<div class="inner">
+											<header class="major">
+												<h3>3D printing</h3>
+											</header>
+											<p>Start by downloading the files from my <a class="else" href="https://www.thingiverse.com/thing:2513241" target="_blank" style="color:#ed4933; border-bottom:transparent;">Thingiverse</a> page, and print them out. Please mind the setting that I mention on Thingiverse.</p>
+											<p>I printed the front and back panel in some ordinary white PLA, and the base in orange PLA (This will be painted). But you can use whatever you like, or have on hand.</p>
+										</div>
+									</div>
+								</section>
+								<section>
+									<a class="image">
+										<img src="images/vintageclock-paint.jpg" alt="" data-position="25% 25%" />
+									</a>
+									<div class="content">
+										<div class="inner">
+											<header class="major">
+												<h3>Painting (Optional)</h3>
+											</header>
+											<p><i>This step is completly optional, I just wanted to try my hands on painting it, and giving it a rustic look.</i></p>
+											<p>I used a technic I learned from reading JON-A-TRON's instructable <a class="else" href="https://www.instructables.com/id/3D-Printed-Animatronic-Puppet/" target="_blank" style="color:#ed4933; border-bottom:transparent;">here</a>, where he also added some videoes of the process.</p>
+											<p>But he basically started spraying a layer of silver, and wenn that was dry, he scattered salt and water randomly over the surface, and then sprayed the final color ontop. Now when that layer was dry, he scraped of the surface, to unwheel the silver.</p>
+										</div>
+									</div>
+								</section>
+								<section>
+									<a href="generic.html" class="image">
+										<img src="images/vintageclock-diagram.png" alt="" data-position="center center" />
+									</a>
+									<div class="content">
+										<div class="inner">
+											<header class="major">
+												<h3>Wiring</h3>
+											</header>
+											<p>1. Start by assembling the Alphanumeric Display, as described on adafruit <a class="else" href="https://learn.adafruit.com/adafruit-led-backpack/0-54-alphanumeric" target="_blank" style="color:#ed4933; border-bottom:transparent;">here</a>.</p>
+											<p>2. Then connect the Display to the Pi Zero as shown on the circuit diagram, with the jumper wires.</p>
+											<p>3. Solder on a resistor to the positive leg of the LED.</p>
+											<p>4. Now cut one of the jumper wires in half, and solder the ends to the LED. Then connect the remaining ends to the Pi as shown on the circuit diagram.</p>
+										</div>
+									</div>
+								</section>
+								<section>
+									<a href="generic.html" class="image">
+										<img src="images/vintageclock-gluebutton.jpg" alt="" data-position="center center" />
+									</a>
+									<div class="content">
+										<div class="inner">
+											<p>5. Cut both ends of one jumper wire to about 7cm and connect the ends to two pins on one of the buttons, as shown on the circuit diagram. Then connect the two remaining ends to the Pi, again as shown on the circuit diagram.</p>
+											<p>6. Now do the previous step ones more for the other button.</p>
+											<header class="major">
+												<h3 style="padding-top:20px;">Assembly</h3> 
+											</header>
+											<p>1. Slide the Pi into the two slots on the back panel, so that the ports line up with the holes. Then secure it with two small screws.</p>
+											<p>2. Fit the buttons into the slots, and Hot Glue them in place.</p>
+										</div>
+									</div>
+								</section>
+								<section>
+									<a href="generic.html" class="image">
+										<img src="images/vintageclock-inside.jpg" alt="" data-position="center center" />
+									</a>
+									<div class="content">
+										<div class="inner">
+											<p>3. Snap the Alphanumeric Display into the holders on the front panel. Keep the orientation in mind!</p>
+											<p>4. Place the LED in the hole next to the Alphanumeric Display, and Hot Glue it in place.</p>
+											<p class="notice"><i class="fa fa-exclamation-circle" style="padding-right:15px;"></i> I recommend sealing the exposed wires/connections with Electrical Tape, Heat Shrink Tubing or Hot Glue.</p>
+											<p>5. Now slide the front panel through the base, and secure the front to the base with screws.</p>
+											<p>6. Insert the SD-Card into the Pi.</p>
+											<p>7. Fit all the wires into the case, and screw the back panel in place.</p>
+										</div>
+									</div>
+								</section>
+							</section>
+							<!-- Code -->
+							<section id="one">
+									<div class="inner" id="code">
+										<header class="major">
+											<h2>Code</h2>
+										</header>
+										<p>By now it only gets displayed on the TV or monitor you have hooked it up to. So now you need to configure the Touchscreen.</p>
+										<p style="padding-top:15px;" class="notice"><i class="fa fa-exclamation-circle" style="padding-right:15px;"></i>This will not configure the touch, but you can find some premade image for the display on adafrut, were the touch is added.
+Fx. <a class="else" href="https://learn.adafruit.com/adafruit-pitft-3-dot-5-touch-screen-for-raspberry-pi/easy-install?view=all" target="_blank" style="color:black; border-bottom:transparent;">here</a>
+ you can find a Jessie-based PiTFT image for the 3.5" display, that you burn to your SD card, just like I showed. And it works right away.</p></p>
+									</div>
+								</section>
+							<section id="two" class="spotlights">
+							<section>	
+								<a class="image">
+									<img src="images/retropie-menu.jpg" alt="" data-position="25% 25%" />
+								</a>
+								<div class="content">
+									<div class="inner">
+										<p><i>I'm basically just following <a class="else" href="https://learn.adafruit.com/running-opengl-based-games-and-emulators-on-adafruit-pitft-displays/retropie-setup?view=all" target="_blank" style="color:#ed4933; border-bottom:transparent;">this</a> guide on Adafruit, but I have stripped it down, so check it out if you want more information about these steps.</i></p>
+										<p style="padding-top:20px;">1. Start by connecting to WIFI. 
+Do this by going to <b>RetroPie</b> <i class="material-icons">arrow_forward</i> <b>WIFI</b> and here you can login to your network. After that just <b>Exit</b>.</p>
+										<p>2. Now by navigating with <b>"A"</b>, go into <b>RetroPie</b> on the menu, go to <b>RASPI-CONFIG</b>.</p>
+									</div>
+								</div>
+							</section>
+							<section>	
+									<a class="image">
+										<img src="images/raspi-config.jpg" alt="" data-position="25% 25%" />
+									</a>
+									<div class="content">
+										<div class="inner">
+											<p>In here navigate with the <b>ARROW-keys</b> and <b>ENTER</b></p>
+											<p>3. In here go to <b>Advanced Options</b> and go over these steps:</p>
+											<p>- Overscan: disable.</p>
+											<p>- Device Tree: enable (not an option in newer releases; it’s always enabled).</p>
+											<p>- SPI: enable and load kernel module by default. (not an option in newer releases; it’s always enabled).</p>
+											<p>- Audio: force 3.5mm headphone jack (since HDMI will be disconnected later).</p>
+											<p style="padding-top:10px;">4. Now go <b>Back</b> <i class="material-icons">arrow_forward</i> And <b>Finish</b>, and reboot the system.</p>
+										</div>
+									</div>
+								</section>
+								<section>
+									<a class="image">
+										<img src="images/retropie-terminal.jpg" alt="" data-position="25% 25%" />
+									</a>
+									<div class="content">
+										<div class="inner">
+												<p>5. After reboot press <b>F4</b> on you keyboard, and you will be greeted with the Command Line.</p>
+												<p style="padding-bottom:20px;">6. Here type these commands:</p>
+												<pre><code>cd
+curl -O https://raw.githubusercontent.com/adafruit/Raspberry-Pi-Installer-Scripts/master/pitft-fbcp.sh</code></pre>
+										</div>
+									</div>
+								</section>
+								<section>
+									<a class="image">
+										<img src="images/screen-conf.jpg" alt="" data-position="25% 25%" />
+									</a>
+									<div class="content">
+										<div class="inner">
+											<p>Now type <code>sudo bash pitft-fbcp.sh</code> to configure.</p>
+											<p>It should now ask you some configuration questions.</p>
+											<p>1. Say <b>"y"</b> to <i>Continue</i>.</p>
+											<p>2. Select <i>Configure options manually</i>, with <b>"4"</b>.</p>
+											<p>3. Select <i>PiTFT Plus 3.5"</i>, with <b>"4"</b>.</p>
+											<p>4. Select <i>Normal (landscape)</i>, with<b>"1"</b>.</p>
+											<p>5. Select <i>270</i>, with <b>"4"</b>.</p>
+											<p>6. Again say <b>"y"</b> to <i>Continue</i>.</p>
+											<p>7. After that say <b>"y"</b> to <i>Reboot</i>.</p>
+										</div>
+									</div>
+								</section>
+							</section>
+						</section>
+								<section id="one"></section>
+									<div class="inner" id="result">
+										<header class="major">
+											<h2>The result</h2>
+										</header>
+										<p>Congratulations, you're done!!!</p>
+									</div>
+									<!-- Slideshow container -->
+									<div class="slideshow-container">
+									
+										<div class="mySlides fade">
+										  <div class="numbertext">1 / 3</div>
+										  <img src="images/retrotv-wide1.jpg" style="width:100%">
+										</div>
+										
+										<div class="mySlides fade">
+										  <div class="numbertext">2 / 3</div>
+										  <img src="images/retrotv-usb.jpg" style="width:100%">
+										</div>
+										
+										<div class="mySlides fade">
+										  <div class="numbertext">3 / 3</div>
+										  <img src="images/retrotv-back.jpg" style="width:100%">
+										</div>
+										
+										<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+										<a class="next" onclick="plusSlides(1)">&#10095;</a>
+											
+										</div>
+										<br>
+										
+										<div style="text-align:center">
+										  <span class="dot" onclick="currentSlide(1)"></span> 
+										  <span class="dot" onclick="currentSlide(2)"></span> 
+										  <span class="dot" onclick="currentSlide(3)"></span> 
+									</div>
+								</section>
+							</section>
+						</section>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<ul class="icons">
+								<li><a href="https://github.com/Anders644PI" target="_blank" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
+								<li><a href="https://www.thingiverse.com/Anders644PI/about" target="_blank" class="icon alt fa-share-alt"><span class="label">Thingiverse</span></a></li>
+								<li><a href="https://www.instructables.com/member/Anders644PI/" target="_blank" class="icon alt fa-group"><span class="label">GitHub</span></a></li>
+							</ul>
+							<ul class="copyright">
+								<li>PiPalace <i style="padding-left:5px;" class="fa fa-bank"></i></li>
+								<li>By: Anders Severinsen</li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+			<script>
+					var slideIndex = 1;
+					showSlides(slideIndex);
+					
+					function plusSlides(n) {
+					  showSlides(slideIndex += n);
+					}
+					
+					function currentSlide(n) {
+					  showSlides(slideIndex = n);
+					}
+					
+					function showSlides(n) {
+					  var i;
+					  var slides = document.getElementsByClassName("mySlides");
+					  var dots = document.getElementsByClassName("dot");
+					  if (n > slides.length) {slideIndex = 1}    
+					  if (n < 1) {slideIndex = slides.length}
+					  for (i = 0; i < slides.length; i++) {
+						  slides[i].style.display = "none";  
+					  }
+					  for (i = 0; i < dots.length; i++) {
+						  dots[i].className = dots[i].className.replace(" active", "");
+					  }
+					  slides[slideIndex-1].style.display = "block";  
+					  dots[slideIndex-1].className += " active";
+					}
+					</script>
+					
+	</body>
+</html>
